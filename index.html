@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio professionnel d'un administrateur système et réseau spécialisé en infrastructure IT, virtualisation et sécurité réseau">
+    <meta name="keywords"
+        content="administrateur système, réseau, infrastructure IT, DevOps, virtualisation, cybersécurité">
+    <meta name="author" content="Raphaël HIRSCH">
+    <title>Raphaël HIRSCH - Administrateur Système & Réseau</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-server"></i>
+                <span>Raphaël<span class="accent-text">HIRSCH</span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">À propos</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Compétences</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Expérience</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projets</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="particles" id="particles"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Bonjour, je suis</p>
+                <h1 class="hero-title">Raphaël HIRSCH</h1>
+                <h2 class="hero-subtitle">
+                    <span class="typing-text" id="typingText">Administrateur Système & Réseau</span>
+                    <span class="cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    Expert en infrastructure IT, virtualisation et sécurité réseau.
+                    Je transforme les défis techniques en solutions robustes et évolutives.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary" id="btnProjects">
+                        <i class="fas fa-folder-open"></i>
+                        Voir mes projets
+                    </a>
+                    <a href="#contact" class="btn btn-secondary" id="btnContact">
+                        <i class="fas fa-envelope"></i>
+                        Me contacter
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/raphaël-hirsch/" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="LinkedIn" id="socialLinkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link"
+                        aria-label="GitHub" id="socialGithub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter" id="socialTwitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="image-backdrop"></div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="terminal-dot dot-red"></span>
+                            <span class="terminal-dot dot-yellow"></span>
+                            <span class="terminal-dot dot-green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">admin@server:~$</span>
+                                <span class="terminal-command">systemctl status network</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-success">● network.service - Network Service</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-text"> Loaded: loaded</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-text"> Active: <span class="terminal-success">active
+                                        (running)</span></span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">admin@server:~$</span>
+                                <span class="terminal-cursor">_</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Qui suis-je</span>
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Raphaël+HIRSCH&size=400&background=4F46E5&color=fff&bold=true"
+                            alt="Raphaël HIRSCH - Photo professionnelle" class="profile-img">
+                        <div class="about-image-border"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 class="about-subtitle">Passionné par l'infrastructure IT et la sécurité</h3>
+                    <p class="about-description">
+                        Actuellement en Mastère MICSI au CESI de Châteauroux (2025-2027) en alternance
+                        au Conseil départemental d'Eure-et-Loir, après un Bachelor ASR dans la même école.
+                        Je me spécialise dans l'administration système et réseau avec une expertise croissante
+                        en infrastructure IT, virtualisation et sécurité réseau.
+                    </p>
+                    <p class="about-description">
+                        Titulaire d'un BTS SIO option SISR, mon parcours m'a permis de développer des compétences
+                        solides en gestion d'infrastructure, migration de postes, veille technologique et
+                        développement d'outils avec PowerShell. Passionné par les nouvelles technologies,
+                        je m'épanouis dans la résolution de problèmes complexes.
+                    </p>
+
+                    <div class="about-interests">
+                        <h4 class="interests-title">Centres d'intérêt</h4>
+                        <div class="interests-grid">
+                            <div class="interest-item">
+                                <i class="fas fa-broadcast-tower"></i>
+                                <span>Radio modélisme</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-skating"></i>
+                                <span>Roller freestyle</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-campground"></i>
+                                <span>Camping</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-book-open"></i>
+                                <span>Lecture</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-plane"></i>
+                                <span>Voyage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="stat-content">
+                                <h4 class="stat-number">Mastère MICSI</h4>
+                                <p class="stat-label">en cours</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <div class="stat-content">
+                                <h4 class="stat-number">10+</h4>
+                                <p class="stat-label">Projets réalisés</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-certificate"></i>
+                            <div class="stat-content">
+                                <h4 class="stat-number">Mastère</h4>
+                                <p class="stat-label">MICSI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Expertise</span>
+                <h2 class="section-title">Compétences Techniques</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="skill-title">Systèmes d'exploitation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Windows Server</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Linux (Ubuntu, CentOS, RHEL)</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Active Directory</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="skill-title">Réseaux & Sécurité</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">TCP/IP, DNS, DHCP</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Cisco, Firewalls</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">VPN, IPSec, SSL</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="skill-title">Cloud & Virtualisation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">VMware vSphere</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Microsoft Azure</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">AWS, Hyper-V</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">Scripting & Automation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">PowerShell</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Bash, Python</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Ansible, Docker</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="skill-title">Monitoring & Sauvegarde</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Nagios, Zabbix</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Veeam Backup</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">ELK Stack</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-title">Bases de données</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Microsoft SQL Server</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">MySQL, PostgreSQL</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Parcours</span>
+                <h2 class="section-title">Expérience Professionnelle</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - 2027 (en cours)</div>
+                        <h3 class="timeline-title">Mastère MICSI en alternance</h3>
+                        <h4 class="timeline-company">CESI Châteauroux - Conseil départemental d'Eure-et-Loir</h4>
+                        <p class="timeline-description">
+                            Formation de niveau Bac+5 en Manager en Infrastructure et Cybersécurité des Systèmes
+                            d'Information.
+                            Alternance au sein du Conseil départemental d'Eure-et-Loir pour gérer et sécuriser
+                            l'infrastructure informatique départementale.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Mastère</span>
+                            <span class="tag">Cybersécurité</span>
+                            <span class="tag">Infrastructure</span>
+                            <span class="tag">Alternance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <h3 class="timeline-title">Bachelor ASR en alternance</h3>
+                        <h4 class="timeline-company">CESI Châteauroux - Conseil départemental d'Eure-et-Loir</h4>
+                        <p class="timeline-description">
+                            Bachelor Administrateur Systèmes et Réseaux en alternance. Administration et
+                            maintenance de l'infrastructure IT du Conseil départemental. Projet majeur : remplacement
+                            de la solution EDR existante par un XDR avec tests et évaluation de plusieurs solutions
+                            du marché (Vision One, CrowdStrike, Cortex). Travail sur diverses solutions de sécurité
+                            et d'infrastructure incluant UBIKA, Serveur Protect, gestion de projets et participation
+                            à la sécurisation du SI.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Bachelor</span>
+                            <span class="tag">EDR/XDR</span>
+                            <span class="tag">CrowdStrike</span>
+                            <span class="tag">UBIKA</span>
+                            <span class="tag">Cybersécurité</span>
+                            <span class="tag">Alternance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">01/06 - 30/08 2024</div>
+                        <h3 class="timeline-title">Technicien</h3>
+                        <h4 class="timeline-company">Hôpital Louis Pasteur - Le Coudray (28)</h4>
+                        <p class="timeline-description">
+                            Migration des postes de Windows 7 vers Windows 10, assurant la mise à jour
+                            du parc informatique de l'hôpital. Réalisation de veille technologique pour
+                            rester à jour sur les dernières évolutions du secteur.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Windows 10</span>
+                            <span class="tag">Migration</span>
+                            <span class="tag">Veille technologique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">08/01 - 01/03 2024</div>
+                        <h3 class="timeline-title">Stagiaire</h3>
+                        <h4 class="timeline-company">Hôpital Louis Pasteur - Le Coudray (28)</h4>
+                        <p class="timeline-description">
+                            Développement d'outils graphiques avec PowerShell pour optimiser les tâches
+                            administratives. Participation à la veille technologique et sensibilisation
+                            aux bonnes pratiques. Organisation de réunions stratégiques et opérationnelles SSI.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">PowerShell</span>
+                            <span class="tag">Développement</span>
+                            <span class="tag">SSI</span>
+                            <span class="tag">Veille technologique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">30/05 - 23/06 2023</div>
+                        <h3 class="timeline-title">Stagiaire</h3>
+                        <h4 class="timeline-company">MisterFlat Informatique - Jouy (28)</h4>
+                        <p class="timeline-description">
+                            Dépannage d'appareils informatiques et analyse des logs système. Assistance
+                            au dépannage d'entreprises professionnelles. Comparatif d'applications de
+                            dépannage à distance et installation d'équipements réseau.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Dépannage</span>
+                            <span class="tag">Support technique</span>
+                            <span class="tag">Réseau</span>
+                            <span class="tag">Analyse de logs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018</div>
+                        <h3 class="timeline-title">Stagiaire (1 semaine)</h3>
+                        <h4 class="timeline-company">X FILES COMPUTEUR - Chartres (28)</h4>
+                        <p class="timeline-description">
+                            Stage de découverte : installation de systèmes d'exploitation sur ordinateurs,
+                            nettoyage de fichiers corrompus, et utilisation de composants de récupération
+                            pour le montage de PC.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Installation OS</span>
+                            <span class="tag">Maintenance</span>
+                            <span class="tag">Assemblage PC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Réalisations</span>
+                <h2 class="section-title">Projets</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-carousel">
+                <button class="carousel-btn carousel-prev" id="projectsPrev" aria-label="Projets précédents">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-next" id="projectsNext" aria-label="Projets suivants">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="projects-wrapper">
+                    <!-- Page 1 -->
+                    <div class="projects-grid active" data-page="1">
+                        <div class="project-card"
+                            onclick="window.open('https://thibaultt28.github.io/Doc_2024_Chartres_SIO2/', '_blank')">
+                            <span class="project-badge school-badge">Projet Scolaire</span>
+                            <div class="project-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3 class="project-title">Documentation BTS SIO 2024</h3>
+                            <p class="project-description">
+                                Projet de documentation collaborative réalisé en 2ème année de BTS SIO option SISR.
+                                Site web présentant les compétences techniques et projets développés au cours de la
+                                formation.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">GitHub Pages</span>
+                                <span class="tech-badge">Documentation</span>
+                            </div>
+                            <div class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <span class="project-badge pro-badge">Projet Pro</span>
+                            <div class="project-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="project-title">Remplacement EDR par XDR</h3>
+                            <p class="project-description">
+                                Projet de remplacement de la solution EDR existante par une solution XDR au sein du
+                                Conseil départemental. Réalisation de phases de tests et d'évaluation comparative sur
+                                plusieurs solutions du marché (Vision One, CrowdStrike, Cortex).
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">XDR</span>
+                                <span class="tech-badge">CrowdStrike</span>
+                                <span class="tech-badge">Vision One</span>
+                                <span class="tech-badge">Cortex</span>
+                            </div>
+                            <div class="project-link">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3 class="project-title">Virtualisation VMware vSphere</h3>
+                            <p class="project-description">
+                                Mise en place d'un cluster VMware vSphere avec vMotion, DRS et HA pour
+                                optimiser l'utilisation des ressources et la disponibilité.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">VMware vSphere</span>
+                                <span class="tech-badge">vCenter</span>
+                                <span class="tech-badge">SAN Storage</span>
+                            </div>
+                            <div class="project-link">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="project-title">Automatisation PowerShell</h3>
+                            <p class="project-description">
+                                Développement de scripts PowerShell pour automatiser la gestion des utilisateurs
+                                AD, le provisioning de VMs et les rapports de conformité.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">PowerShell</span>
+                                <span class="tech-badge">Active Directory</span>
+                                <span class="tech-badge">Task Scheduler</span>
+                            </div>
+                            <div class="project-link">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3 class="project-title">Système de Sauvegarde Centralisé</h3>
+                            <p class="project-description">
+                                Implémentation d'une solution de sauvegarde centralisée avec Veeam Backup &
+                                Replication pour 200+ serveurs virtuels et physiques.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Veeam</span>
+                                <span class="tech-badge">NAS</span>
+                                <span class="tech-badge">Backup Strategy</span>
+                            </div>
+                            <div class="project-link">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div>
+                            <h3 class="project-title">Monitoring & Supervision</h3>
+                            <p class="project-description">
+                                Déploiement d'une plateforme de monitoring complète avec Zabbix pour surveiller
+                                l'infrastructure réseau, les serveurs et les applications critiques.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Zabbix</span>
+                                <span class="tech-badge">SNMP</span>
+                                <span class="tech-badge">Grafana</span>
+                            </div>
+                            <div class="project-link">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 2 - À compléter -->
+                    <div class="projects-grid" data-page="2">
+                        <!-- Les 6 prochains projets seront ajoutés ici -->
+                        <div class="project-card placeholder-card">
+                            <div class="project-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3 class="project-title">Projet à venir</h3>
+                            <p class="project-description">
+                                Emplacement réservé pour un futur projet à ajouter.
+                            </p>
+                        </div>
+
+                        <div class="project-card placeholder-card">
+                            <div class="project-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3 class="project-title">Projet à venir</h3>
+                            <p class="project-description">
+                                Emplacement réservé pour un futur projet à ajouter.
+                            </p>
+                        </div>
+
+                        <div class="project-card placeholder-card">
+                            <div class="project-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3 class="project-title">Projet à venir</h3>
+                            <p class="project-description">
+                                Emplacement réservé pour un futur projet à ajouter.
+                            </p>
+                        </div>
+
+                        <div class="project-card placeholder-card">
+                            <div class="project-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3 class="project-title">Projet à venir</h3>
+                            <p class="project-description">
+                                Emplacement réservé pour un futur projet à ajouter.
+                            </p>
+                        </div>
+
+                        <div class="project-card placeholder-card">
+                            <div class="project-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3 class="project-title">Projet à venir</h3>
+                            <p class="project-description">
+                                Emplacement réservé pour un futur projet à ajouter.
+                            </p>
+                        </div>
+
+                        <div class="project-card placeholder-card">
+                            <div class="project-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3 class="project-title">Projet à venir</h3>
+                            <p class="project-description">
+                                Emplacement réservé pour un futur projet à ajouter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-page="1" aria-label="Page 1"></button>
+                    <button class="indicator" data-page="2" aria-label="Page 2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Restons en contact</span>
+                <h2 class="section-title">Contactez-moi</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-subtitle">Discutons de votre projet</h3>
+                    <p class="contact-text">
+                        Vous avez un projet d'infrastructure IT, besoin de conseils en sécurité réseau,
+                        ou simplement envie d'échanger sur les technologies ? N'hésitez à me contacter !
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text-info">
+                                <h4>Email</h4>
+                                <a href="mailto:raphael.hirsch.pro@gmail.com">raphael.hirsch.pro@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text-info">
+                                <h4>Téléphone</h4>
+                                <a href="tel:+33783758061">07 83 75 80 61</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text-info">
+                                <h4>Localisation</h4>
+                                <p>Thivers (28), France</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/in/raphaël-hirsch/" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+                            aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Stack Overflow">
+                            <i class="fab fa-stack-overflow"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="formName" class="form-label">Nom complet</label>
+                        <input type="text" id="formName" name="name" class="form-input" placeholder="Jean Dupont"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formEmail" class="form-label">Email</label>
+                        <input type="email" id="formEmail" name="email" class="form-input"
+                            placeholder="jean.dupont@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formSubject" class="form-label">Sujet</label>
+                        <input type="text" id="formSubject" name="subject" class="form-input"
+                            placeholder="Projet de migration cloud" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formMessage" class="form-label">Message</label>
+                        <textarea id="formMessage" name="message" class="form-textarea" rows="5"
+                            placeholder="Décrivez brièvement votre projet ou vos besoins..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="btnSubmit">
+                        <i class="fas fa-paper-plane"></i>
+                        Envoyer le message
+                    </button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-server"></i>
+                        <span>Raphaël<span class="accent-text">HIRSCH</span></span>
+                    </div>
+                    <p class="footer-tagline">Expert en infrastructure IT et sécurité réseau</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#experience">Expérience</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Projets</h4>
+                    <ul>
+                        <li><a href="#projects">Tous les projets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Raphaël HIRSCH. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
