@@ -16,6 +16,8 @@
     --color-bg-secondary: #0E1530;
     --color-bg-tertiary: #1F2937;
     --color-bg-card: rgba(31, 41, 55, 0.6);
+    --color-bg-card-opaque: #192337;
+    /* Solid color (based on rgba 31,41,55) */
 
     /* Text Colors */
     --color-text-primary: #F9FAFB;
@@ -364,7 +366,8 @@ a:hover {
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 60;
+    /* Lift hero content above the canvas (z-index 50) */
     max-width: 1400px;
     width: 100%;
     display: grid;
@@ -441,8 +444,8 @@ a:hover {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--color-bg-card);
-    backdrop-filter: blur(10px);
+    background-color: var(--color-bg-card-opaque);
+    /* backdrop-filter removed */
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
@@ -464,11 +467,13 @@ a:hover {
 }
 
 .terminal-window {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-card-opaque);
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 60;
     animation: slideInRight 1s ease-out;
 }
 
@@ -615,6 +620,8 @@ a:hover {
     cursor: pointer;
     transition: all var(--transition-base);
     text-decoration: none;
+    position: relative;
+    z-index: 60;
 }
 
 .btn-primary {
@@ -629,7 +636,7 @@ a:hover {
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: var(--color-bg-card-opaque);
     color: var(--color-text-primary);
     border: 2px solid var(--color-primary);
 }
@@ -743,11 +750,13 @@ section {
     align-items: center;
     gap: var(--spacing-md);
     padding: var(--spacing-md);
-    background-color: var(--color-bg-card);
-    backdrop-filter: blur(10px);
+    background-color: var(--color-bg-card-opaque);
+    /* backdrop-filter removed */
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all var(--transition-base);
+    position: relative;
+    z-index: 60;
 }
 
 .stat-item:hover {
@@ -831,12 +840,14 @@ section {
 }
 
 .skill-category {
-    background-color: var(--color-bg-card);
-    backdrop-filter: blur(10px);
+    background-color: var(--color-bg-card-opaque);
+    /* backdrop-filter removed */
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all var(--transition-base);
+    position: relative;
+    z-index: 60;
 }
 
 .skill-category:hover {
@@ -923,7 +934,9 @@ section {
 }
 
 .certification-card {
-    background: var(--color-bg-card);
+    background: var(--color-bg-card-opaque);
+    z-index: 60;
+    /* Ensure card sits above animation */
     border: 1px solid rgba(79, 70, 229, 0.2);
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
@@ -1118,12 +1131,14 @@ section {
 }
 
 .timeline-content {
-    background-color: var(--color-bg-card);
-    backdrop-filter: blur(10px);
+    background-color: var(--color-bg-card-opaque);
+    /* backdrop-filter removed */
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all var(--transition-base);
+    position: relative;
+    z-index: 60;
 }
 
 .timeline-content:hover {
@@ -1204,6 +1219,7 @@ section {
     position: absolute;
     width: 100%;
     pointer-events: none;
+    z-index: 60;
 }
 
 .projects-grid.active {
@@ -1293,8 +1309,9 @@ section {
 
 .project-card {
     position: relative;
-    background-color: var(--color-bg-card);
-    backdrop-filter: blur(10px);
+    z-index: 60;
+    background-color: var(--color-bg-card-opaque);
+    /* backdrop-filter removed */
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1510,11 +1527,13 @@ section {
 
 /* Contact Form */
 .contact-form {
-    background-color: var(--color-bg-card);
-    backdrop-filter: blur(10px);
+    background-color: var(--color-bg-card-opaque);
+    /* backdrop-filter removed */
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 60;
 }
 
 .form-group {
