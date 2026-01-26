@@ -26,6 +26,7 @@
 </head>
 
 <body>
+    <canvas id="bg-canvas"></canvas>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -571,41 +572,50 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">30/05 - 23/06 2023</div>
-                        <h3 class="timeline-title">Stagiaire</h3>
-                        <h4 class="timeline-company">MisterFlat Informatique - Jouy (28)</h4>
-                        <p class="timeline-description">
-                            Dépannage d'appareils informatiques et analyse des logs système. Assistance
-                            au dépannage d'entreprises professionnelles. Comparatif d'applications de
-                            dépannage à distance et installation d'équipements réseau.
-                        </p>
-                        <div class="timeline-tags">
-                            <span class="tag">Dépannage</span>
-                            <span class="tag">Support technique</span>
-                            <span class="tag">Réseau</span>
-                            <span class="tag">Analyse de logs</span>
-                        </div>
-                    </div>
+                <div class="timeline-dropdown-trigger">
+                    <button id="btnShowOldExp" class="btn-text">
+                        <span>Voir les expériences plus anciennes</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2018</div>
-                        <h3 class="timeline-title">Stagiaire (1 semaine)</h3>
-                        <h4 class="timeline-company">X FILES COMPUTEUR - Chartres (28)</h4>
-                        <p class="timeline-description">
-                            Stage de découverte : installation de systèmes d'exploitation sur ordinateurs,
-                            nettoyage de fichiers corrompus, et utilisation de composants de récupération
-                            pour le montage de PC.
-                        </p>
-                        <div class="timeline-tags">
-                            <span class="tag">Installation OS</span>
-                            <span class="tag">Maintenance</span>
-                            <span class="tag">Assemblage PC</span>
+                <div id="oldExperienceContainer" class="timeline-hidden-content">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">30/05 - 23/06 2023</div>
+                            <h3 class="timeline-title">Stagiaire</h3>
+                            <h4 class="timeline-company">MisterFlat Informatique - Jouy (28)</h4>
+                            <p class="timeline-description">
+                                Dépannage d'appareils informatiques et analyse des logs système. Assistance
+                                au dépannage d'entreprises professionnelles. Comparatif d'applications de
+                                dépannage à distance et installation d'équipements réseau.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Dépannage</span>
+                                <span class="tag">Support technique</span>
+                                <span class="tag">Réseau</span>
+                                <span class="tag">Analyse de logs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2018</div>
+                            <h3 class="timeline-title">Stagiaire (1 semaine)</h3>
+                            <h4 class="timeline-company">X FILES COMPUTEUR - Chartres (28)</h4>
+                            <p class="timeline-description">
+                                Stage de découverte : installation de systèmes d'exploitation sur ordinateurs,
+                                nettoyage de fichiers corrompus, et utilisation de composants de récupération
+                                pour le montage de PC.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Installation OS</span>
+                                <span class="tag">Maintenance</span>
+                                <span class="tag">Assemblage PC</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -866,7 +876,7 @@
                             </div>
                             <div class="contact-text-info">
                                 <h4>Localisation</h4>
-                                <p>Thivers (28), France</p>
+                                <p>Thivars (28), France</p>
                             </div>
                         </div>
                     </div>

@@ -118,56 +118,147 @@ function typeText() {
 setTimeout(typeText, 1000);
 
 // ========================================
-// Particles Animation
+// Dynamic Glowing Topographic Background (Canvas)
 // ========================================
-const particlesContainer = document.getElementById('particles');
-const particleCount = 50;
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
 
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.style.position = 'absolute';
-    particle.style.width = Math.random() * 3 + 1 + 'px';
-    particle.style.height = particle.style.width;
-    particle.style.background = 'rgba(129, 140, 248, 0.5)';
-    particle.style.borderRadius = '50%';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.pointerEvents = 'none';
+let width, height;
 
-    const duration = Math.random() * 20 + 10;
-    const delay = Math.random() * 5;
+// Simplex Noise (Self-contained)
+const Noise = (function () {
+    const p = new Uint8Array(512);
+    const perm = [151, 160, 137, 91, 90, 15, 131, 13, 201, 95, 96, 53, 194, 233, 7, 225, 140, 36, 103, 30, 69, 142, 8, 99, 37, 240, 21, 10, 23, 190, 6, 148, 247, 120, 234, 75, 0, 26, 197, 62, 94, 252, 219, 203, 117, 35, 11, 32, 57, 177, 33, 88, 237, 149, 56, 87, 174, 20, 125, 136, 171, 168, 68, 175, 74, 165, 71, 134, 139, 48, 27, 166, 77, 146, 158, 231, 83, 111, 229, 122, 60, 211, 133, 230, 220, 105, 92, 41, 55, 46, 245, 40, 244, 102, 143, 54, 65, 25, 63, 161, 1, 216, 80, 73, 209, 76, 132, 187, 208, 89, 18, 169, 200, 196, 135, 130, 116, 188, 159, 86, 164, 100, 109, 198, 173, 186, 3, 64, 52, 217, 226, 250, 124, 123, 5, 202, 38, 147, 118, 126, 255, 82, 85, 212, 207, 206, 59, 227, 47, 16, 58, 17, 182, 189, 28, 42, 223, 183, 170, 213, 119, 248, 152, 2, 44, 154, 163, 70, 221, 153, 101, 155, 167, 43, 172, 9, 129, 22, 39, 253, 19, 98, 108, 110, 79, 113, 224, 232, 178, 185, 112, 104, 218, 246, 97, 228, 251, 34, 242, 193, 238, 210, 144, 12, 191, 179, 162, 241, 81, 51, 145, 235, 249, 14, 239, 107, 49, 192, 214, 31, 181, 199, 106, 157, 184, 84, 204, 176, 115, 121, 50, 45, 127, 4, 150, 254, 138, 236, 205, 93, 222, 114, 67, 29, 24, 72, 243, 141, 128, 195, 78, 66, 215, 61, 156, 180];
+    for (let i = 0; i < 256; i++) p[256 + i] = p[i] = perm[i];
+    function dot(g, x, y, z) { return g[0] * x + g[1] * y + g[2] * z; }
+    const grad3 = [[1, 1, 0], [-1, 1, 0], [1, -1, 0], [-1, -1, 0], [1, 0, 1], [-1, 0, 1], [1, 0, -1], [-1, 0, -1], [0, 1, 1], [0, -1, 1], [0, 1, -1], [0, -1, -1]];
+    return {
+        noise: function (xin, yin, zin) {
+            let n0, n1, n2, n3;
+            const F3 = 1.0 / 3.0;
+            const s = (xin + yin + zin) * F3;
+            const i = Math.floor(xin + s);
+            const j = Math.floor(yin + s);
+            const k = Math.floor(zin + s);
+            const G3 = 1.0 / 6.0;
+            const t = (i + j + k) * G3;
+            const X0 = i - t;
+            const Y0 = j - t;
+            const Z0 = k - t;
+            const x0 = xin - X0;
+            const y0 = yin - Y0;
+            const z0 = zin - Z0;
+            let i1, j1, k1, i2, j2, k2;
+            if (x0 >= y0) {
+                if (y0 >= z0) { i1 = 1; j1 = 0; k1 = 0; i2 = 1; j2 = 1; k2 = 0; }
+                else if (x0 >= z0) { i1 = 1; j1 = 0; k1 = 0; i2 = 1; j2 = 0; k2 = 1; }
+                else { i1 = 0; j1 = 0; k1 = 1; i2 = 1; j2 = 0; k2 = 1; }
+            } else {
+                if (y0 < z0) { i1 = 0; j1 = 0; k1 = 1; i2 = 0; j2 = 1; k2 = 1; }
+                else if (x0 < z0) { i1 = 0; j1 = 1; k1 = 0; i2 = 0; j2 = 1; k2 = 1; }
+                else { i1 = 0; j1 = 1; k1 = 0; i2 = 1; j2 = 1; k2 = 0; }
+            }
+            const x1 = x0 - i1 + G3;
+            const y1 = y0 - j1 + G3;
+            const z1 = z0 - k1 + G3;
+            const x2 = x0 - i2 + 2.0 * G3;
+            const y2 = y0 - j2 + 2.0 * G3;
+            const z2 = z0 - k2 + 2.0 * G3;
+            const x3 = x0 - 1.0 + 3.0 * G3;
+            const y3 = y0 - 1.0 + 3.0 * G3;
+            const z3 = z0 - 1.0 + 3.0 * G3;
+            const ii = i & 255;
+            const jj = j & 255;
+            const kk = k & 255;
+            const gi0 = grad3[p[ii + p[jj + p[kk]]] % 12];
+            const gi1 = grad3[p[ii + i1 + p[jj + j1 + p[kk + k1]]] % 12];
+            const gi2 = grad3[p[ii + i2 + p[jj + j2 + p[kk + k2]]] % 12];
+            const gi3 = grad3[p[ii + 1 + p[jj + 1 + p[kk + 1]]] % 12];
+            let t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0;
+            if (t0 < 0) n0 = 0.0; else { t0 *= t0; n0 = t0 * t0 * dot(gi0, x0, y0, z0); }
+            let t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1;
+            if (t1 < 0) n1 = 0.0; else { t1 *= t1; n1 = t1 * t1 * dot(gi1, x1, y1, z1); }
+            let t2 = 0.6 - x2 * x2 - y2 * y2 - z2 * z2;
+            if (t2 < 0) n2 = 0.0; else { t2 *= t2; n2 = t2 * t2 * dot(gi2, x2, y2, z2); }
+            let t3 = 0.6 - x3 * x3 - y3 * y3 - z3 * z3;
+            if (t3 < 0) n3 = 0.0; else { t3 *= t3; n3 = t3 * t3 * dot(gi3, x3, y3, z3); }
+            return 32.0 * (n0 + n1 + n2 + n3);
+        }
+    };
+})();
 
-    particle.style.animation = `floatParticle ${duration}s ${delay}s infinite ease-in-out`;
+// Configuration
+const config = {
+    noiseScale: 0.0004,
+    speed: 0.0005,
+    glowColors: [
+        'rgba(0, 255, 255, 0.15)',    // Neon Cyan
+        'rgba(0, 150, 255, 0.15)',    // Neon Blue
+        'rgba(0, 200, 255, 0.15)'     // Light Blue
+    ]
+};
 
-    return particle;
+let time = 0;
+
+function resizeCanvas() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
 }
 
-// Add CSS animation for particles
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes floatParticle {
-        0%, 100% {
-            transform: translate(0, 0);
-            opacity: 0;
+function drawTopography() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Draw systems on the sides
+    drawOrganicSystem(width * 1.2, height * 1.2, Math.max(width, height) * 1.2);
+    drawOrganicSystem(-width * 0.2, -height * 0.2, Math.max(width, height) * 0.8);
+
+    time += config.speed;
+    requestAnimationFrame(drawTopography);
+}
+
+function drawOrganicSystem(centerX, centerY, maxRadius) {
+    // Increased spacing to 350 for fewer lines as requested
+    for (let r = 100; r < maxRadius; r += 350) {
+        ctx.beginPath();
+
+        let colorIndex = Math.floor(r / 200) % config.glowColors.length;
+        ctx.strokeStyle = config.glowColors[colorIndex];
+        ctx.lineWidth = 1;
+
+        // Restore high quality glow (ShadowBlur)
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = config.glowColors[colorIndex].replace('0.15)', '0.5)');
+
+        // Restore high resolution for smooth curves (0.02 step)
+        for (let angle = 0; angle <= Math.PI * 2; angle += 0.02) {
+            const xBase = centerX + Math.cos(angle) * r;
+            const yBase = centerY + Math.sin(angle) * r;
+
+            // Noise based distortion
+            const noiseVal = Noise.noise(xBase * config.noiseScale, yBase * config.noiseScale, time - r * 0.0005);
+
+            const distortion = 150 * noiseVal;
+
+            const x = centerX + Math.cos(angle) * (r + distortion);
+            const y = centerY + Math.sin(angle) * (r + distortion);
+
+            if (angle === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
         }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px);
-            opacity: 0;
-        }
+        ctx.closePath();
+        ctx.stroke();
     }
-`;
-document.head.appendChild(style);
-
-// Create particles
-for (let i = 0; i < particleCount; i++) {
-    particlesContainer.appendChild(createParticle());
 }
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+drawTopography();
+
+// Old animation disabled
+// window.addEventListener('resize', resizeCanvas);
+// resizeCanvas();
+// initWaves();
+// animateWaves();
 
 // ========================================
 // Scroll Reveal Animations
@@ -303,6 +394,28 @@ formInputs.forEach(input => {
 });
 
 // ========================================
+// Experience Dropdown
+// ========================================
+const btnShowOldExp = document.getElementById('btnShowOldExp');
+const oldExperienceContainer = document.getElementById('oldExperienceContainer');
+
+if (btnShowOldExp && oldExperienceContainer) {
+    btnShowOldExp.addEventListener('click', () => {
+        const isOpen = oldExperienceContainer.classList.contains('open');
+
+        if (isOpen) {
+            oldExperienceContainer.classList.remove('open');
+            btnShowOldExp.classList.remove('active');
+            btnShowOldExp.querySelector('span').textContent = 'Voir les expériences plus anciennes';
+        } else {
+            oldExperienceContainer.classList.add('open');
+            btnShowOldExp.classList.add('active');
+            btnShowOldExp.querySelector('span').textContent = 'Masquer les expériences anciennes';
+        }
+    });
+}
+
+// ========================================
 // Back to Top Button
 // ========================================
 const backToTop = document.getElementById('backToTop');
@@ -423,8 +536,12 @@ if (footerYear) {
 // ========================================
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero-content');
 
+    // Background Parallax Effect
+    // Move the background slowly as user scrolls
+    document.body.style.setProperty('--bg-pos-y', `${scrolled * 0.15}px`);
+
+    const hero = document.querySelector('.hero-content');
     if (hero && scrolled < window.innerHeight) {
         hero.style.transform = `translateY(${scrolled * 0.3}px)`;
         hero.style.opacity = 1 - scrolled / 800;
