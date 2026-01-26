@@ -304,65 +304,7 @@ a:hover {
     padding: var(--spacing-3xl) var(--spacing-md);
 }
 
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-}
 
-
-
-.particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.15;
-}
-
-.gradient-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.5;
-    animation: float 20s ease-in-out infinite;
-}
-
-.orb-1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #667EEA, transparent);
-    top: -250px;
-    right: -100px;
-    animation-delay: 0s;
-}
-
-.orb-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #06B6D4, transparent);
-    bottom: -200px;
-    left: -100px;
-    animation-delay: 3s;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    33% {
-        transform: translate(50px, -50px) scale(1.1);
-    }
-
-    66% {
-        transform: translate(-50px, 50px) scale(0.9);
-    }
-}
 
 .hero-content {
     position: relative;
@@ -445,7 +387,7 @@ a:hover {
     height: 50px;
     border-radius: 50%;
     background-color: var(--color-bg-card-opaque);
-    /* backdrop-filter removed */
+    
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
@@ -751,7 +693,7 @@ section {
     gap: var(--spacing-md);
     padding: var(--spacing-md);
     background-color: var(--color-bg-card-opaque);
-    /* backdrop-filter removed */
+    
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all var(--transition-base);
@@ -841,7 +783,7 @@ section {
 
 .skill-category {
     background-color: var(--color-bg-card-opaque);
-    /* backdrop-filter removed */
+    
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1132,7 +1074,7 @@ section {
 
 .timeline-content {
     background-color: var(--color-bg-card-opaque);
-    /* backdrop-filter removed */
+    
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1311,7 +1253,7 @@ section {
     position: relative;
     z-index: 60;
     background-color: var(--color-bg-card-opaque);
-    /* backdrop-filter removed */
+    
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1528,7 +1470,7 @@ section {
 /* Contact Form */
 .contact-form {
     background-color: var(--color-bg-card-opaque);
-    /* backdrop-filter removed */
+    
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);

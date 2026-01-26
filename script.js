@@ -254,11 +254,7 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 drawTopography();
 
-// Old animation disabled
-// window.addEventListener('resize', resizeCanvas);
-// resizeCanvas();
-// initWaves();
-// animateWaves();
+
 
 // ========================================
 // Scroll Reveal Animations
@@ -537,9 +533,7 @@ if (footerYear) {
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
 
-    // Background Parallax Effect
-    // Move the background slowly as user scrolls
-    document.body.style.setProperty('--bg-pos-y', `${scrolled * 0.15}px`);
+    // Background Parallax Effect removed as unused
 
     const hero = document.querySelector('.hero-content');
     if (hero && scrolled < window.innerHeight) {
@@ -548,24 +542,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ========================================
-// Mouse Movement Effect on Hero
-// ========================================
-const heroSection = document.querySelector('.hero');
-const orbs = document.querySelectorAll('.gradient-orb');
-
-heroSection.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    orbs.forEach((orb, index) => {
-        const speed = (index + 1) * 20;
-        const xOffset = (x - 0.5) * speed;
-        const yOffset = (y - 0.5) * speed;
-
-        orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-    });
-});
+// Mouse movement effect removed (old orbs)
 
 // ========================================
 // Terminal Animation
