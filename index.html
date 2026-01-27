@@ -9,7 +9,29 @@
     <meta name="keywords"
         content="administrateur système, réseau, infrastructure IT, DevOps, virtualisation, cybersécurité">
     <meta name="author" content="Raphaël HIRSCH">
-    <title>Raphaël HIRSCH </title>
+    <title>Raphaël HIRSCH - Administrateur Système & Réseau</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Raphaël HIRSCH - Administrateur Système & Réseau">
+    <meta property="og:description"
+        content="Expert en infrastructure IT, virtualisation et sécurité réseau. Portfolio professionnel.">
+    <meta property="og:image"
+        content="https://ui-avatars.com/api/?name=Raphaël+HIRSCH&size=1200&background=4F46E5&color=fff&bold=true">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Raphaël HIRSCH - Administrateur Système & Réseau">
+    <meta property="twitter:description" content="Expert en infrastructure IT, virtualisation et sécurité réseau.">
+    <meta property="twitter:image"
+        content="https://ui-avatars.com/api/?name=Raphaël+HIRSCH&size=1200&background=4F46E5&color=fff&bold=true">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,15 +46,7 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="index.css">
 
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            // Remplacer "YOUR_PUBLIC_KEY" par votre clé publique EmailJS
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init("yM4rcVCJFQML2IfCE");
-        })();
-    </script>
+    <!-- EmailJS will be loaded at the end of body for better performance -->
 </head>
 
 <body>
@@ -717,9 +731,6 @@
                                 <span class="tech-badge">Vision One</span>
                                 <span class="tech-badge">Cortex</span>
                             </div>
-                            <div class="project-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
                         </div>
 
                         <div class="project-card" data-project="vmware">
@@ -735,9 +746,6 @@
                                 <span class="tech-badge">VMware vSphere</span>
                                 <span class="tech-badge">vCenter</span>
                                 <span class="tech-badge">SAN Storage</span>
-                            </div>
-                            <div class="project-link">
-                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
 
@@ -755,9 +763,6 @@
                                 <span class="tech-badge">Active Directory</span>
                                 <span class="tech-badge">Task Scheduler</span>
                             </div>
-                            <div class="project-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
                         </div>
 
                         <div class="project-card" data-project="backup">
@@ -774,9 +779,6 @@
                                 <span class="tech-badge">NAS</span>
                                 <span class="tech-badge">Backup Strategy</span>
                             </div>
-                            <div class="project-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
                         </div>
 
                         <div class="project-card" data-project="monitoring">
@@ -792,9 +794,6 @@
                                 <span class="tech-badge">Zabbix</span>
                                 <span class="tech-badge">SNMP</span>
                                 <span class="tech-badge">Grafana</span>
-                            </div>
-                            <div class="project-link">
-                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
                     </div>
@@ -972,7 +971,7 @@
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <i class="fas fa-server"></i>
-                        <span>Raphaël<span class="accent-text">HIRSCH</span></span>
+                        <span>Raphaël <span class="accent-text">HIRSCH</span></span>
                     </div>
                     <p class="footer-tagline">Expert en infrastructure IT et sécurité réseau</p>
                 </div>
@@ -1004,8 +1003,19 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- EmailJS SDK - Loaded at end for performance -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script defer>
+        // Initialize EmailJS after script loads
+        window.addEventListener('DOMContentLoaded', function () {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init("yM4rcVCJFQML2IfCE");
+            }
+        });
+    </script>
+
     <!-- Main JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

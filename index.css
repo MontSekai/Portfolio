@@ -1457,9 +1457,7 @@ a.tag-link:hover {
     transform: scaleX(1);
 }
 
-.project-card:hover {
-    /* Removed border change for non-clickable */
-}
+
 
 .project-badge {
     position: absolute;
