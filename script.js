@@ -189,12 +189,14 @@ const Noise = (function () {
 
 // Configuration
 const config = {
-    noiseScale: 0.0004,
-    speed: 0.0005,
+    noiseScale: 0.001, // Increased frequency for more "alterations"
+    speed: 0.0002, // Slower animation
     glowColors: [
-        'rgba(0, 255, 255, 0.15)',    // Neon Cyan
-        'rgba(0, 150, 255, 0.15)',    // Neon Blue
-        'rgba(0, 200, 255, 0.15)'     // Light Blue
+        'rgba(0, 255, 255, 0.15)',    // Cyan
+        'rgba(139, 92, 246, 0.15)',   // Violet
+        'rgba(236, 72, 153, 0.15)',   // Rose
+        'rgba(16, 185, 129, 0.15)',   // Emeraude
+        'rgba(59, 130, 246, 0.15)'    // Bleu royal
     ]
 };
 
@@ -237,7 +239,7 @@ function drawOrganicSystem(centerX, centerY, maxRadius) {
             // Noise based distortion
             const noiseVal = Noise.noise(xBase * config.noiseScale, yBase * config.noiseScale, time - r * 0.0005);
 
-            const distortion = 150 * noiseVal;
+            const distortion = 250 * noiseVal; // Increased distortion for more wave effect
 
             const x = centerX + Math.cos(angle) * (r + distortion);
             const y = centerY + Math.sin(angle) * (r + distortion);
@@ -325,52 +327,37 @@ contactForm.addEventListener('submit', async (e) => {
         message: document.getElementById('formMessage').value
     };
 
-    // Simulate form submission
+    // EmailJS Submission
     const submitBtn = document.getElementById('btnSubmit');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
     submitBtn.disabled = true;
 
-    // Simulate API call
-    setTimeout(() => {
-        formStatus.textContent = 'Message envoyé avec succès ! Je vous répondrai bientôt.';
-        formStatus.className = 'form-status success';
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        contactForm.reset();
+    // Paramètres EmailJS (à remplacer par les vôtres)
+    // Service ID: Identifiant du service mail (ex: Gmail)
+    // Template ID: Identifiant du modèle de mail créé sur EmailJS
+    const serviceID = 'service_mu96xj2';
+    const templateID = 'template_paro9q1';
 
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            formStatus.style.display = 'none';
-        }, 5000);
-    }, 1500);
-
-    // In production, replace with actual API call:
-    /*
-    try {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
-        
-        if (response.ok) {
-            formStatus.textContent = 'Message envoyé avec succès !';
+    emailjs.sendForm(serviceID, templateID, contactForm)
+        .then(() => {
+            formStatus.textContent = 'Message envoyé avec succès ! Je vous répondrai bientôt.';
             formStatus.className = 'form-status success';
             contactForm.reset();
-        } else {
-            throw new Error('Erreur lors de l\'envoi');
-        }
-    } catch (error) {
-        formStatus.textContent = 'Une erreur est survenue. Veuillez réessayer.';
-        formStatus.className = 'form-status error';
-    } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }
-    */
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
+        }, (err) => {
+            console.error('Erreur EmailJS:', err);
+            formStatus.textContent = 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer.';
+            formStatus.className = 'form-status error';
+        })
+        .finally(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
 });
 
 // Form validation feedback
@@ -594,3 +581,652 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial states
     console.log('Portfolio chargé et prêt !');
 });
+
+// ========================================
+// Language Switcher System
+// ========================================
+const translations = {
+    fr: {
+        // Navigation
+        'nav.home': 'Accueil',
+        'nav.about': 'À propos',
+        'nav.skills': 'Compétences',
+        'nav.experience': 'Expérience',
+        'nav.projects': 'Projets',
+        'nav.contact': 'Contact',
+
+        // Hero Section
+        'hero.greeting': 'Bonjour, je suis',
+        'hero.description': 'Expert en infrastructure IT, virtualisation et sécurité réseau. Je transforme les défis techniques en solutions robustes et évolutives.',
+        'hero.btn.projects': 'Voir mes projets',
+        'hero.btn.contact': 'Me contacter',
+
+        // Typing texts
+        'typing.0': 'Administrateur Système & Réseau',
+        'typing.1': 'Expert Infrastructure IT',
+        'typing.2': 'Spécialiste Virtualisation',
+        'typing.3': 'DevOps Engineer',
+
+        // About Section
+        'about.tag': 'Qui suis-je',
+        'about.title': 'À propos de moi',
+        'about.subtitle': 'Passionné par l\'infrastructure IT et la sécurité',
+        'about.desc1': 'Actuellement en Mastère MICSI au CESI de Châteauroux (2025-2027) en alternance au Conseil départemental d\'Eure-et-Loir, après un Bachelor ASR dans la même école. Je me spécialise dans l\'administration système et réseau avec une expertise croissante en infrastructure IT, virtualisation et sécurité réseau.',
+        'about.desc2': 'Titulaire d\'un BTS SIO option SISR, mon parcours m\'a permis de développer des compétences solides en gestion d\'infrastructure, migration de postes, veille technologique et développement d\'outils avec PowerShell. Passionné par les nouvelles technologies, je m\'épanouis dans la résolution de problèmes complexes.',
+        'about.interests': 'Centres d\'intérêt',
+        'about.interest.radio': 'Radio modélisme',
+        'about.interest.roller': 'Roller freestyle',
+        'about.interest.camping': 'Camping',
+        'about.interest.reading': 'Lecture',
+        'about.interest.travel': 'Voyage',
+        'about.interest.triathlon': 'Triathlon',
+        'about.tooltip.radio': 'Prise de vue par drone',
+        'about.tooltip.roller': '11 ans de club\nParticipation au championnat de France 2018',
+        'about.tooltip.camping': 'Trek en haute montagne',
+        'about.tooltip.triathlon': 'Inscrit depuis 1 an en club',
+        'about.stat.degree': 'en cours',
+        'about.stat.projects': 'Projets réalisés',
+
+        // Skills Section
+        'skills.tag': 'Expertise',
+        'skills.title': 'Compétences Techniques',
+        'skills.os': 'Systèmes d\'exploitation',
+        'skills.network': 'Réseaux & Sécurité',
+        'skills.cloud': 'Cloud & Virtualisation',
+        'skills.scripting': 'Scripting & Automation',
+        'skills.monitoring': 'Monitoring & Sauvegarde',
+        'skills.database': 'Bases de données',
+
+        // Certifications
+        'certs.tag': 'Reconnaissance',
+        'certs.title': 'Certifications',
+        'certs.view': 'Voir le badge',
+        'certs.obtained': 'Obtenu le',
+
+        // Certification cards
+        'cert.citoyen.title': 'Citoyen Responsable - Implication',
+        'cert.citoyen.issuer': 'CESI - École d\'Ingénieurs',
+        'cert.citoyen.date': 'Obtenu le 26 Septembre 2025',
+        'cert.psc1.title': 'PSC - Premiers Secours Citoyen',
+        'cert.psc1.issuer': 'Croix-Rouge Française',
+        'cert.psc1.date': 'Obtenu',
+
+        // Experience Section
+        'exp.tag': 'Parcours',
+        'exp.title': 'Expérience Professionnelle',
+        'exp.show.old': 'Voir les expériences plus anciennes',
+        'exp.hide.old': 'Masquer les expériences anciennes',
+        'exp.current': '(en cours)',
+
+        // Experience cards
+        'exp.micsi.date': '2025 - 2027 (en cours)',
+        'exp.micsi.title': 'Mastère MICSI en alternance',
+        'exp.micsi.company': 'CESI Châteauroux - Conseil départemental d\'Eure-et-Loir',
+        'exp.micsi.desc': 'Formation de niveau Bac+5 en Manager en Infrastructure et Cybersécurité des Systèmes d\'Information. Alternance au sein du Conseil départemental d\'Eure-et-Loir pour gérer et sécuriser l\'infrastructure informatique départementale.',
+
+        'exp.bachelor.date': '2024 - 2025',
+        'exp.bachelor.title': 'Bachelor ASR en alternance',
+        'exp.bachelor.company': 'CESI Châteauroux - Conseil départemental d\'Eure-et-Loir',
+        'exp.bachelor.desc': 'Bachelor Administrateur Systèmes et Réseaux en alternance. Administration et maintenance de l\'infrastructure IT du Conseil départemental. Projet majeur : remplacement de la solution EDR existante par un XDR avec tests et évaluation de plusieurs solutions du marché (Vision One, CrowdStrike, Cortex). Travail sur diverses solutions de sécurité et d\'infrastructure incluant UBIKA, Serveur Protect, gestion de projets et participation à la sécurisation du SI.',
+
+        'exp.tech-hopital.date': '01/06 - 30/08 2024',
+        'exp.tech-hopital.title': 'Technicien',
+        'exp.tech-hopital.company': 'Hôpital Louis Pasteur - Le Coudray (28)',
+        'exp.tech-hopital.desc': 'Migration des postes de Windows 7 vers Windows 10, assurant la mise à jour du parc informatique de l\'hôpital. Réalisation de veille technologique pour rester à jour sur les dernières évolutions du secteur.',
+
+        'exp.stage-hopital.date': '08/01 - 01/03 2024',
+        'exp.stage-hopital.title': 'Stagiaire',
+        'exp.stage-hopital.company': 'Hôpital Louis Pasteur - Le Coudray (28)',
+        'exp.stage-hopital.desc': 'Développement d\'outils graphiques avec PowerShell pour optimiser les tâches administratives. Participation à la veille technologique et sensibilisation aux bonnes pratiques. Organisation de réunions stratégiques et opérationnelles SSI.',
+
+        'exp.misterflat.date': '30/05 - 23/06 2023',
+        'exp.misterflat.title': 'Stagiaire',
+        'exp.misterflat.company': 'MisterFlat Informatique - Jouy (28)',
+        'exp.misterflat.desc': 'Dépannage d\'appareils informatiques et analyse des logs système. Assistance au dépannage d\'entreprises professionnelles. Comparatif d\'applications de dépannage à distance et installation d\'équipements réseau.',
+
+        'exp.xfiles.date': '2018',
+        'exp.xfiles.title': 'Stagiaire (1 semaine)',
+        'exp.xfiles.company': 'X FILES COMPUTEUR - Chartres (28)',
+        'exp.xfiles.desc': 'Stage de découverte : installation de systèmes d\'exploitation sur ordinateurs, nettoyage de fichiers corrompus, et utilisation de composants de récupération pour le montage de PC.',
+
+        // Projects
+        'projects.tag': 'Réalisations',
+        'projects.title': 'Projets',
+        'projects.school': 'Projet Scolaire',
+        'projects.pro': 'Projet Pro',
+        'projects.coming': 'Projet à venir',
+        'projects.coming.desc': 'Emplacement réservé pour un futur projet à ajouter.',
+
+        // Project cards
+        'project.doc-bts.title': 'Documentation BTS SIO 2024',
+        'project.doc-bts.desc': 'Projet de documentation collaborative réalisé en 2ème année de BTS SIO option SISR. Site web présentant les compétences techniques et projets développés au cours de la formation.',
+        'project.edr-xdr.title': 'Remplacement EDR par XDR',
+        'project.edr-xdr.desc': 'Projet de remplacement de la solution EDR existante par une solution XDR au sein du Conseil départemental. Réalisation de phases de tests et d\'évaluation comparative sur plusieurs solutions du marché (Vision One, CrowdStrike, Cortex).',
+        'project.vmware.title': 'Virtualisation VMware vSphere',
+        'project.vmware.desc': 'Mise en place d\'un cluster VMware vSphere avec vMotion, DRS et HA pour optimiser l\'utilisation des ressources et la disponibilité.',
+        'project.powershell.title': 'Automatisation PowerShell',
+        'project.powershell.desc': 'Développement de scripts PowerShell pour automatiser la gestion des utilisateurs AD, le provisioning de VMs et les rapports de conformité.',
+        'project.backup.title': 'Système de Sauvegarde Centralisé',
+        'project.backup.desc': 'Implémentation d\'une solution de sauvegarde centralisée avec Veeam Backup & Replication pour 200+ serveurs virtuels et physiques.',
+        'project.monitoring.title': 'Monitoring & Supervision',
+        'project.monitoring.desc': 'Déploiement d\'une plateforme de monitoring complète avec Zabbix pour surveiller l\'infrastructure réseau, les serveurs et les applications critiques.',
+
+        // Contact
+        'contact.tag': 'Restons en contact',
+        'contact.title': 'Contactez-moi',
+        'contact.subtitle': 'Discutons de votre projet',
+        'contact.text': 'Vous avez un projet d\'infrastructure IT, besoin de conseils en sécurité réseau, ou simplement envie d\'échanger sur les technologies ? N\'hésitez à me contacter !',
+        'contact.phone': 'Téléphone',
+        'contact.location': 'Localisation',
+        'contact.form.name': 'Nom complet',
+        'contact.form.email': 'Email',
+        'contact.form.subject': 'Sujet',
+        'contact.form.message': 'Message',
+        'contact.form.placeholder.name': 'Jean Dupont',
+        'contact.form.placeholder.email': 'jean.dupont@example.com',
+        'contact.form.placeholder.subject': 'Projet de migration cloud',
+        'contact.form.placeholder.message': 'Décrivez brièvement votre projet ou vos besoins...',
+        'contact.form.submit': 'Envoyer le message',
+        'contact.form.success': 'Message envoyé avec succès ! Je vous répondrai bientôt.',
+        'contact.form.sending': 'Envoi en cours...',
+
+        // Footer
+        'footer.tagline': 'Expert en infrastructure IT et sécurité réseau',
+        'footer.nav': 'Navigation',
+        'footer.projects': 'Projets',
+        'footer.all.projects': 'Tous les projets',
+        'footer.copyright': 'Tous droits réservés.',
+
+        // Scroll
+        'scroll': 'Scroll'
+    },
+    en: {
+        // Navigation
+        'nav.home': 'Home',
+        'nav.about': 'About',
+        'nav.skills': 'Skills',
+        'nav.experience': 'Experience',
+        'nav.projects': 'Projects',
+        'nav.contact': 'Contact',
+
+        // Hero Section
+        'hero.greeting': 'Hello, I am',
+        'hero.description': 'IT infrastructure, virtualization, and network security expert. I transform technical challenges into robust and scalable solutions.',
+        'hero.btn.projects': 'View my projects',
+        'hero.btn.contact': 'Contact me',
+
+        // Typing texts
+        'typing.0': 'System & Network Administrator',
+        'typing.1': 'IT Infrastructure Expert',
+        'typing.2': 'Virtualization Specialist',
+        'typing.3': 'DevOps Engineer',
+
+        // About Section
+        'about.tag': 'Who am I',
+        'about.title': 'About me',
+        'about.subtitle': 'Passionate about IT infrastructure and security',
+        'about.desc1': 'Currently pursuing a Master\'s in MICSI at CESI Châteauroux (2025-2027) as a work-study at the Conseil départemental d\'Eure-et-Loir, after a Bachelor\'s in ASR at the same school. I specialize in system and network administration with growing expertise in IT infrastructure, virtualization, and network security.',
+        'about.desc2': 'Holder of a BTS SIO SISR option, my journey has allowed me to develop strong skills in infrastructure management, workstation migration, technology watch, and tool development with PowerShell. Passionate about new technologies, I thrive in solving complex problems.',
+        'about.interests': 'Interests',
+        'about.interest.radio': 'RC Modeling',
+        'about.interest.roller': 'Freestyle Roller',
+        'about.interest.camping': 'Camping',
+        'about.interest.reading': 'Reading',
+        'about.interest.travel': 'Travel',
+        'about.interest.triathlon': 'Triathlon',
+        'about.tooltip.radio': 'Drone photography',
+        'about.tooltip.roller': '11 years in club\nFrench Championship 2018 participation',
+        'about.tooltip.camping': 'High mountain trekking',
+        'about.tooltip.triathlon': 'Club member for 1 year',
+        'about.stat.degree': 'in progress',
+        'about.stat.projects': 'Projects completed',
+
+        // Skills Section
+        'skills.tag': 'Expertise',
+        'skills.title': 'Technical Skills',
+        'skills.os': 'Operating Systems',
+        'skills.network': 'Networks & Security',
+        'skills.cloud': 'Cloud & Virtualization',
+        'skills.scripting': 'Scripting & Automation',
+        'skills.monitoring': 'Monitoring & Backup',
+        'skills.database': 'Databases',
+
+        // Certifications
+        'certs.tag': 'Recognition',
+        'certs.title': 'Certifications',
+        'certs.view': 'View badge',
+        'certs.obtained': 'Obtained on',
+
+        // Certification cards
+        'cert.citoyen.title': 'Responsible Citizen - Involvement',
+        'cert.citoyen.issuer': 'CESI - Engineering School',
+        'cert.citoyen.date': 'Obtained on September 26, 2025',
+        'cert.psc1.title': 'PSC - Citizen First Aid',
+        'cert.psc1.issuer': 'French Red Cross',
+        'cert.psc1.date': 'Obtained',
+
+        // Experience Section
+        'exp.tag': 'Journey',
+        'exp.title': 'Professional Experience',
+        'exp.show.old': 'Show older experiences',
+        'exp.hide.old': 'Hide older experiences',
+        'exp.current': '(ongoing)',
+
+        // Experience cards
+        'exp.micsi.date': '2025 - 2027 (ongoing)',
+        'exp.micsi.title': 'Master\'s MICSI Work-Study',
+        'exp.micsi.company': 'CESI Châteauroux - Eure-et-Loir Departmental Council',
+        'exp.micsi.desc': 'Master\'s degree (Bac+5) in IT Infrastructure and Cybersecurity Management. Work-study at the Eure-et-Loir Departmental Council to manage and secure the departmental IT infrastructure.',
+
+        'exp.bachelor.date': '2024 - 2025',
+        'exp.bachelor.title': 'Bachelor ASR Work-Study',
+        'exp.bachelor.company': 'CESI Châteauroux - Eure-et-Loir Departmental Council',
+        'exp.bachelor.desc': 'Bachelor\'s in System and Network Administration as work-study. Administration and maintenance of the Departmental Council\'s IT infrastructure. Major project: replacement of the existing EDR solution with an XDR through testing and evaluation of several market solutions (Vision One, CrowdStrike, Cortex). Work on various security and infrastructure solutions including UBIKA, Server Protect, project management and participation in IS security.',
+
+        'exp.tech-hopital.date': '06/01 - 08/30 2024',
+        'exp.tech-hopital.title': 'Technician',
+        'exp.tech-hopital.company': 'Louis Pasteur Hospital - Le Coudray (28)',
+        'exp.tech-hopital.desc': 'Migration of workstations from Windows 7 to Windows 10, ensuring the update of the hospital\'s computer fleet. Technology watch to stay up-to-date on the latest developments in the sector.',
+
+        'exp.stage-hopital.date': '01/08 - 03/01 2024',
+        'exp.stage-hopital.title': 'Intern',
+        'exp.stage-hopital.company': 'Louis Pasteur Hospital - Le Coudray (28)',
+        'exp.stage-hopital.desc': 'Development of graphical tools with PowerShell to optimize administrative tasks. Participation in technology watch and awareness of best practices. Organization of strategic and operational ISS meetings.',
+
+        'exp.misterflat.date': '05/30 - 06/23 2023',
+        'exp.misterflat.title': 'Intern',
+        'exp.misterflat.company': 'MisterFlat Informatique - Jouy (28)',
+        'exp.misterflat.desc': 'Troubleshooting computer equipment and analyzing system logs. Assisting with troubleshooting for professional businesses. Comparison of remote troubleshooting applications and installation of network equipment.',
+
+        'exp.xfiles.date': '2018',
+        'exp.xfiles.title': 'Intern (1 week)',
+        'exp.xfiles.company': 'X FILES COMPUTEUR - Chartres (28)',
+        'exp.xfiles.desc': 'Discovery internship: installing operating systems on computers, cleaning corrupted files, and using recovery components for PC assembly.',
+
+        // Projects
+        'projects.tag': 'Achievements',
+        'projects.title': 'Projects',
+        'projects.school': 'School Project',
+        'projects.pro': 'Professional Project',
+        'projects.coming': 'Coming soon',
+        'projects.coming.desc': 'Placeholder for a future project to be added.',
+
+        // Project cards
+        'project.doc-bts.title': 'BTS SIO 2024 Documentation',
+        'project.doc-bts.desc': 'Collaborative documentation project completed in the 2nd year of BTS SIO SISR option. Website presenting the technical skills and projects developed during the training.',
+        'project.edr-xdr.title': 'EDR to XDR Replacement',
+        'project.edr-xdr.desc': 'Project to replace the existing EDR solution with an XDR solution within the Departmental Council. Conducting testing and comparative evaluation phases on several market solutions (Vision One, CrowdStrike, Cortex).',
+        'project.vmware.title': 'VMware vSphere Virtualization',
+        'project.vmware.desc': 'Implementation of a VMware vSphere cluster with vMotion, DRS and HA to optimize resource utilization and availability.',
+        'project.powershell.title': 'PowerShell Automation',
+        'project.powershell.desc': 'Development of PowerShell scripts to automate AD user management, VM provisioning and compliance reports.',
+        'project.backup.title': 'Centralized Backup System',
+        'project.backup.desc': 'Implementation of a centralized backup solution with Veeam Backup & Replication for 200+ virtual and physical servers.',
+        'project.monitoring.title': 'Monitoring & Supervision',
+        'project.monitoring.desc': 'Deployment of a complete monitoring platform with Zabbix to monitor network infrastructure, servers and critical applications.',
+
+        // Contact
+        'contact.tag': 'Get in touch',
+        'contact.title': 'Contact me',
+        'contact.subtitle': 'Let\'s discuss your project',
+        'contact.text': 'Do you have an IT infrastructure project, need advice on network security, or simply want to talk about technology? Feel free to contact me!',
+        'contact.phone': 'Phone',
+        'contact.location': 'Location',
+        'contact.form.name': 'Full name',
+        'contact.form.email': 'Email',
+        'contact.form.subject': 'Subject',
+        'contact.form.message': 'Message',
+        'contact.form.placeholder.name': 'John Doe',
+        'contact.form.placeholder.email': 'john.doe@example.com',
+        'contact.form.placeholder.subject': 'Cloud migration project',
+        'contact.form.placeholder.message': 'Briefly describe your project or needs...',
+        'contact.form.submit': 'Send message',
+        'contact.form.success': 'Message sent successfully! I will get back to you soon.',
+        'contact.form.sending': 'Sending...',
+
+        // Footer
+        'footer.tagline': 'IT infrastructure and network security expert',
+        'footer.nav': 'Navigation',
+        'footer.projects': 'Projects',
+        'footer.all.projects': 'All projects',
+        'footer.copyright': 'All rights reserved.',
+
+        // Scroll
+        'scroll': 'Scroll'
+    }
+};
+
+let currentLang = localStorage.getItem('portfolio-lang') || 'fr';
+
+// Language Switcher UI
+const langSwitcher = document.getElementById('langSwitcher');
+const langBtn = document.getElementById('langBtn');
+const langDropdown = document.getElementById('langDropdown');
+const langOptions = document.querySelectorAll('.lang-option');
+const langCurrentText = document.querySelector('.lang-current');
+
+// Toggle dropdown
+langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langSwitcher.classList.toggle('open');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!langSwitcher.contains(e.target)) {
+        langSwitcher.classList.remove('open');
+    }
+});
+
+// Language option click
+langOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        const lang = option.dataset.lang;
+        setLanguage(lang);
+        langSwitcher.classList.remove('open');
+    });
+});
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('portfolio-lang', lang);
+
+    // Update button text
+    langCurrentText.textContent = lang.toUpperCase();
+
+    // Update active state on options
+    langOptions.forEach(opt => {
+        opt.classList.remove('active');
+        if (opt.dataset.lang === lang) {
+            opt.classList.add('active');
+        }
+    });
+
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+
+    // Apply translations
+    applyTranslations(lang);
+
+    // Update typing texts array
+    updateTypingTexts(lang);
+}
+
+function applyTranslations(lang) {
+    const t = translations[lang];
+
+    // Navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '#home') link.textContent = t['nav.home'];
+        if (href === '#about') link.textContent = t['nav.about'];
+        if (href === '#skills') link.textContent = t['nav.skills'];
+        if (href === '#experience') link.textContent = t['nav.experience'];
+        if (href === '#projects') link.textContent = t['nav.projects'];
+        if (href === '#contact') link.textContent = t['nav.contact'];
+    });
+
+    // Hero Section
+    const heroGreeting = document.querySelector('.hero-greeting');
+    if (heroGreeting) heroGreeting.textContent = t['hero.greeting'];
+
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) heroDesc.textContent = t['hero.description'];
+
+    const btnProjects = document.getElementById('btnProjects');
+    if (btnProjects) {
+        btnProjects.innerHTML = `<i class="fas fa-folder-open"></i> ${t['hero.btn.projects']}`;
+    }
+
+    const btnContact = document.getElementById('btnContact');
+    if (btnContact) {
+        btnContact.innerHTML = `<i class="fas fa-envelope"></i> ${t['hero.btn.contact']}`;
+    }
+
+    // About Section
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+        const aboutTag = aboutSection.querySelector('.section-tag');
+        if (aboutTag) aboutTag.textContent = t['about.tag'];
+
+        const aboutTitle = aboutSection.querySelector('.section-title');
+        if (aboutTitle) aboutTitle.textContent = t['about.title'];
+
+        const aboutSubtitle = aboutSection.querySelector('.about-subtitle');
+        if (aboutSubtitle) aboutSubtitle.textContent = t['about.subtitle'];
+
+        const aboutDescs = aboutSection.querySelectorAll('.about-description');
+        if (aboutDescs[0]) aboutDescs[0].textContent = t['about.desc1'];
+        if (aboutDescs[1]) aboutDescs[1].textContent = t['about.desc2'];
+
+        const interestsTitle = aboutSection.querySelector('.interests-title');
+        if (interestsTitle) interestsTitle.textContent = t['about.interests'];
+
+        const interestItems = aboutSection.querySelectorAll('.interest-item span');
+        if (interestItems[0]) interestItems[0].textContent = t['about.interest.radio'];
+        if (interestItems[1]) interestItems[1].textContent = t['about.interest.roller'];
+        if (interestItems[2]) interestItems[2].textContent = t['about.interest.camping'];
+        if (interestItems[3]) interestItems[3].textContent = t['about.interest.reading'];
+        if (interestItems[4]) interestItems[4].textContent = t['about.interest.travel'];
+        if (interestItems[5]) interestItems[5].textContent = t['about.interest.triathlon'];
+
+        const interestItemDivs = aboutSection.querySelectorAll('.interest-item');
+        if (interestItemDivs[0]) interestItemDivs[0].setAttribute('data-tooltip', t['about.tooltip.radio']);
+        if (interestItemDivs[1]) interestItemDivs[1].setAttribute('data-tooltip', t['about.tooltip.roller']);
+        if (interestItemDivs[2]) interestItemDivs[2].setAttribute('data-tooltip', t['about.tooltip.camping']);
+        if (interestItemDivs[5]) interestItemDivs[5].setAttribute('data-tooltip', t['about.tooltip.triathlon']);
+
+        const statLabels = aboutSection.querySelectorAll('.stat-label');
+        if (statLabels[0]) statLabels[0].textContent = t['about.stat.degree'];
+        if (statLabels[1]) statLabels[1].textContent = t['about.stat.projects'];
+    }
+
+    // Skills Section
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+        const skillsTag = skillsSection.querySelector('.section-tag');
+        if (skillsTag) skillsTag.textContent = t['skills.tag'];
+
+        const skillsTitle = skillsSection.querySelector('.section-title');
+        if (skillsTitle) skillsTitle.textContent = t['skills.title'];
+
+        const skillTitles = skillsSection.querySelectorAll('.skill-title');
+        if (skillTitles[0]) skillTitles[0].textContent = t['skills.os'];
+        if (skillTitles[1]) skillTitles[1].textContent = t['skills.network'];
+        if (skillTitles[2]) skillTitles[2].textContent = t['skills.cloud'];
+        if (skillTitles[3]) skillTitles[3].textContent = t['skills.scripting'];
+        if (skillTitles[4]) skillTitles[4].textContent = t['skills.monitoring'];
+        if (skillTitles[5]) skillTitles[5].textContent = t['skills.database'];
+    }
+
+    // Certifications
+    const certsSection = document.getElementById('certifications');
+    if (certsSection) {
+        const certsTag = certsSection.querySelector('.section-tag');
+        if (certsTag) certsTag.textContent = t['certs.tag'];
+
+        const certsTitle = certsSection.querySelector('.section-title');
+        if (certsTitle) certsTitle.textContent = t['certs.title'];
+
+        const certLink = certsSection.querySelector('.cert-link span');
+        if (certLink) certLink.textContent = t['certs.view'];
+
+        // Update individual certification cards
+        const certCards = certsSection.querySelectorAll('.certification-card[data-cert]');
+        certCards.forEach(card => {
+            const certId = card.dataset.cert;
+            const titleKey = `cert.${certId}.title`;
+            const issuerKey = `cert.${certId}.issuer`;
+            const dateKey = `cert.${certId}.date`;
+
+            const titleEl = card.querySelector('.cert-title');
+            const issuerEl = card.querySelector('.cert-issuer');
+            const dateEl = card.querySelector('.cert-date');
+
+            if (titleEl && t[titleKey]) titleEl.textContent = t[titleKey];
+            if (issuerEl && t[issuerKey]) issuerEl.textContent = t[issuerKey];
+            if (dateEl && t[dateKey]) dateEl.innerHTML = `<i class="far fa-calendar-alt"></i> ${t[dateKey]}`;
+        });
+    }
+
+    // Experience Section
+    const expSection = document.getElementById('experience');
+    if (expSection) {
+        const expTag = expSection.querySelector('.section-tag');
+        if (expTag) expTag.textContent = t['exp.tag'];
+
+        const expTitle = expSection.querySelector('.section-title');
+        if (expTitle) expTitle.textContent = t['exp.title'];
+
+        // Update individual experience cards
+        const expItems = expSection.querySelectorAll('.timeline-item[data-exp]');
+        expItems.forEach(item => {
+            const expId = item.dataset.exp;
+            const dateKey = `exp.${expId}.date`;
+            const titleKey = `exp.${expId}.title`;
+            const companyKey = `exp.${expId}.company`;
+            const descKey = `exp.${expId}.desc`;
+
+            const dateEl = item.querySelector('.timeline-date');
+            const titleEl = item.querySelector('.timeline-title');
+            const companyEl = item.querySelector('.timeline-company');
+            const descEl = item.querySelector('.timeline-description');
+
+            if (dateEl && t[dateKey]) dateEl.textContent = t[dateKey];
+            if (titleEl && t[titleKey]) titleEl.textContent = t[titleKey];
+            if (companyEl && t[companyKey]) companyEl.textContent = t[companyKey];
+            if (descEl && t[descKey]) descEl.textContent = t[descKey];
+        });
+    }
+
+    // Update toggle button text
+    const btnShowOldExp = document.getElementById('btnShowOldExp');
+    if (btnShowOldExp) {
+        const isOpen = document.getElementById('oldExperienceContainer')?.classList.contains('open');
+        btnShowOldExp.querySelector('span').textContent = isOpen ? t['exp.hide.old'] : t['exp.show.old'];
+    }
+
+    // Projects Section
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+        const projectsTag = projectsSection.querySelector('.section-tag');
+        if (projectsTag) projectsTag.textContent = t['projects.tag'];
+
+        const projectsTitle = projectsSection.querySelector('.section-title');
+        if (projectsTitle) projectsTitle.textContent = t['projects.title'];
+
+        // Update project badges
+        const schoolBadges = projectsSection.querySelectorAll('.school-badge');
+        schoolBadges.forEach(badge => badge.textContent = t['projects.school']);
+
+        const proBadges = projectsSection.querySelectorAll('.pro-badge');
+        proBadges.forEach(badge => badge.textContent = t['projects.pro']);
+
+        // Update individual project cards
+        const projectCards = projectsSection.querySelectorAll('.project-card[data-project]');
+        projectCards.forEach(card => {
+            const projectId = card.dataset.project;
+            const titleKey = `project.${projectId}.title`;
+            const descKey = `project.${projectId}.desc`;
+
+            const titleEl = card.querySelector('.project-title');
+            const descEl = card.querySelector('.project-description');
+
+            if (titleEl && t[titleKey]) titleEl.textContent = t[titleKey];
+            if (descEl && t[descKey]) descEl.textContent = t[descKey];
+        });
+
+        // Update placeholder cards
+        const placeholderCards = projectsSection.querySelectorAll('.placeholder-card');
+        placeholderCards.forEach(card => {
+            const title = card.querySelector('.project-title');
+            const desc = card.querySelector('.project-description');
+            if (title) title.textContent = t['projects.coming'];
+            if (desc) desc.textContent = t['projects.coming.desc'];
+        });
+    }
+
+    // Contact Section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        const contactTag = contactSection.querySelector('.section-tag');
+        if (contactTag) contactTag.textContent = t['contact.tag'];
+
+        const contactTitle = contactSection.querySelector('.section-title');
+        if (contactTitle) contactTitle.textContent = t['contact.title'];
+
+        const contactSubtitle = contactSection.querySelector('.contact-subtitle');
+        if (contactSubtitle) contactSubtitle.textContent = t['contact.subtitle'];
+
+        const contactText = contactSection.querySelector('.contact-text');
+        if (contactText) contactText.textContent = t['contact.text'];
+
+        const contactH4s = contactSection.querySelectorAll('.contact-text-info h4');
+        if (contactH4s[1]) contactH4s[1].textContent = t['contact.phone'];
+        if (contactH4s[2]) contactH4s[2].textContent = t['contact.location'];
+
+        // Form labels
+        const formLabels = contactSection.querySelectorAll('.form-label');
+        if (formLabels[0]) formLabels[0].textContent = t['contact.form.name'];
+        if (formLabels[1]) formLabels[1].textContent = t['contact.form.email'];
+        if (formLabels[2]) formLabels[2].textContent = t['contact.form.subject'];
+        if (formLabels[3]) formLabels[3].textContent = t['contact.form.message'];
+
+        // Form placeholders
+        const formName = document.getElementById('formName');
+        const formEmail = document.getElementById('formEmail');
+        const formSubject = document.getElementById('formSubject');
+        const formMessage = document.getElementById('formMessage');
+
+        if (formName) formName.placeholder = t['contact.form.placeholder.name'];
+        if (formEmail) formEmail.placeholder = t['contact.form.placeholder.email'];
+        if (formSubject) formSubject.placeholder = t['contact.form.placeholder.subject'];
+        if (formMessage) formMessage.placeholder = t['contact.form.placeholder.message'];
+
+        const btnSubmit = document.getElementById('btnSubmit');
+        if (btnSubmit && !btnSubmit.disabled) {
+            btnSubmit.innerHTML = `<i class="fas fa-paper-plane"></i> ${t['contact.form.submit']}`;
+        }
+    }
+
+    // Footer
+    const footer = document.querySelector('.footer');
+    if (footer) {
+        const footerTagline = footer.querySelector('.footer-tagline');
+        if (footerTagline) footerTagline.textContent = t['footer.tagline'];
+
+        const footerH4s = footer.querySelectorAll('.footer-links h4');
+        if (footerH4s[0]) footerH4s[0].textContent = t['footer.nav'];
+        if (footerH4s[1]) footerH4s[1].textContent = t['footer.projects'];
+
+        // Footer navigation links
+        const footerLinks = footer.querySelectorAll('.footer-links ul li a');
+        footerLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#home') link.textContent = t['nav.home'];
+            if (href === '#about') link.textContent = t['nav.about'];
+            if (href === '#skills') link.textContent = t['nav.skills'];
+            if (href === '#experience') link.textContent = t['nav.experience'];
+            if (href === '#projects') link.textContent = t['footer.all.projects'];
+            if (href === '#contact') link.textContent = t['nav.contact'];
+        });
+    }
+
+    // Scroll indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator p');
+    if (scrollIndicator) scrollIndicator.textContent = t['scroll'];
+}
+
+function updateTypingTexts(lang) {
+    const t = translations[lang];
+    texts[0] = t['typing.0'];
+    texts[1] = t['typing.1'];
+    texts[2] = t['typing.2'];
+    texts[3] = t['typing.3'];
+}
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage(currentLang);
+});
+

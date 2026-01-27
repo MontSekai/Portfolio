@@ -23,6 +23,16 @@
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="index.css">
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Remplacer "YOUR_PUBLIC_KEY" par votre clé publique EmailJS
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init("yM4rcVCJFQML2IfCE");
+        })();
+    </script>
 </head>
 
 <body>
@@ -42,6 +52,23 @@
                 <li class="nav-item"><a href="#projects" class="nav-link">Projets</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="lang-switcher" id="langSwitcher">
+                <button class="lang-btn" id="langBtn" aria-label="Changer de langue">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-current">FR</span>
+                    <i class="fas fa-chevron-down lang-arrow"></i>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-option active" data-lang="fr">
+                        <span class="lang-flag">🇫🇷</span>
+                        <span>Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="en">
+                        <span class="lang-flag">🇬🇧</span>
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
@@ -84,8 +111,9 @@
                         aria-label="GitHub" id="socialGithub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="Twitter" id="socialTwitter">
-                        <i class="fab fa-twitter"></i>
+                    <a href="CV_Alternance_Raphael_HIRSCH.pdf" target="_blank" rel="noopener noreferrer"
+                        class="social-link social-text" aria-label="CV" id="socialCV">
+                        <span>CV</span>
                     </a>
                 </div>
             </div>
@@ -164,15 +192,16 @@
                     <div class="about-interests">
                         <h4 class="interests-title">Centres d'intérêt</h4>
                         <div class="interests-grid">
-                            <div class="interest-item">
+                            <div class="interest-item has-tooltip" data-tooltip="Prise de vue par drone">
                                 <i class="fas fa-broadcast-tower"></i>
                                 <span>Radio modélisme</span>
                             </div>
-                            <div class="interest-item">
+                            <div class="interest-item has-tooltip"
+                                data-tooltip="11 ans de club&#10;Participation au championnat de France 2018">
                                 <i class="fas fa-skating"></i>
                                 <span>Roller freestyle</span>
                             </div>
-                            <div class="interest-item">
+                            <div class="interest-item has-tooltip" data-tooltip="Trek en haute montagne">
                                 <i class="fas fa-campground"></i>
                                 <span>Camping</span>
                             </div>
@@ -183,6 +212,10 @@
                             <div class="interest-item">
                                 <i class="fas fa-plane"></i>
                                 <span>Voyage</span>
+                            </div>
+                            <div class="interest-item has-tooltip" data-tooltip="Inscrit depuis 1 an en club">
+                                <i class="fas fa-swimmer"></i>
+                                <span>Triathlon</span>
                             </div>
                         </div>
                     </div>
@@ -241,7 +274,7 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span class="skill-name">Linux (Ubuntu, CentOS, RHEL)</span>
+                                <span class="skill-name">Linux (Ubuntu, Debian, kali)</span>
                                 <span class="skill-percent">90%</span>
                             </div>
                             <div class="skill-bar">
@@ -323,10 +356,10 @@
                         <div class="skill-item">
                             <div class="skill-info">
                                 <span class="skill-name">AWS, Hyper-V</span>
-                                <span class="skill-percent">78%</span>
+                                <span class="skill-percent">50%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 78%"></div>
+                                <div class="skill-progress" style="width: 50%"></div>
                             </div>
                         </div>
                     </div>
@@ -349,7 +382,7 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span class="skill-name">Bash, Python</span>
+                                <span class="skill-name">Python</span>
                                 <span class="skill-percent">85%</span>
                             </div>
                             <div class="skill-bar">
@@ -359,10 +392,10 @@
                         <div class="skill-item">
                             <div class="skill-info">
                                 <span class="skill-name">Ansible, Docker</span>
-                                <span class="skill-percent">80%</span>
+                                <span class="skill-percent">75%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
+                                <div class="skill-progress" style="width: 75%"></div>
                             </div>
                         </div>
                     </div>
@@ -452,10 +485,10 @@
                 <div class="section-line"></div>
             </div>
             <div class="certifications-grid">
-                <div class="certification-card"
+                <div class="certification-card" data-cert="citoyen"
                     onclick="window.open('https://openbadgefactory.com/obv3/credentials/5b8005d0b97b172252071c918ac6c232c7e5c33b', '_blank')">
-                    <div class="cert-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
+                    <div class="cert-icon cert-badge-img">
+                        <img src="badge-citoyen.png" alt="Badge Citoyen Responsable">
                     </div>
                     <div class="cert-content">
                         <h3 class="cert-title">Citoyen Responsable - Implication</h3>
@@ -468,6 +501,20 @@
                     </div>
                     <div class="cert-bg-icon">
                         <i class="fas fa-hands-helping"></i>
+                    </div>
+                </div>
+
+                <div class="certification-card" data-cert="psc1">
+                    <div class="cert-icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">PSC - Premiers Secours Citoyen</h3>
+                        <p class="cert-issuer">Croix-Rouge Française</p>
+                        <p class="cert-date"><i class="far fa-calendar-alt"></i> Obtenu</p>
+                    </div>
+                    <div class="cert-bg-icon">
+                        <i class="fas fa-heartbeat"></i>
                     </div>
                 </div>
             </div>
@@ -483,7 +530,7 @@
                 <div class="section-line"></div>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item" data-exp="micsi">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">2025 - 2027 (en cours)</div>
@@ -504,7 +551,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-exp="bachelor">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">2024 - 2025</div>
@@ -529,7 +576,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-exp="tech-hopital">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">01/06 - 30/08 2024</div>
@@ -548,7 +595,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-exp="stage-hopital">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">08/01 - 01/03 2024</div>
@@ -576,7 +623,7 @@
                 </div>
 
                 <div id="oldExperienceContainer" class="timeline-hidden-content">
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-exp="misterflat">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div class="timeline-date">30/05 - 23/06 2023</div>
@@ -596,7 +643,7 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-exp="xfiles">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div class="timeline-date">2018</div>
@@ -638,7 +685,7 @@
                 <div class="projects-wrapper">
                     <!-- Page 1 -->
                     <div class="projects-grid active" data-page="1">
-                        <div class="project-card"
+                        <div class="project-card" data-project="doc-bts"
                             onclick="window.open('https://thibaultt28.github.io/Doc_2024_Chartres_SIO2/', '_blank')">
                             <span class="project-badge school-badge">Projet Scolaire</span>
                             <div class="project-icon">
@@ -660,7 +707,7 @@
                             </div>
                         </div>
 
-                        <div class="project-card">
+                        <div class="project-card" data-project="edr-xdr">
                             <span class="project-badge pro-badge">Projet Pro</span>
                             <div class="project-icon">
                                 <i class="fas fa-shield-alt"></i>
@@ -682,7 +729,7 @@
                             </div>
                         </div>
 
-                        <div class="project-card">
+                        <div class="project-card" data-project="vmware">
                             <div class="project-icon">
                                 <i class="fas fa-server"></i>
                             </div>
@@ -701,7 +748,7 @@
                             </div>
                         </div>
 
-                        <div class="project-card">
+                        <div class="project-card" data-project="powershell">
                             <div class="project-icon">
                                 <i class="fas fa-robot"></i>
                             </div>
@@ -720,7 +767,7 @@
                             </div>
                         </div>
 
-                        <div class="project-card">
+                        <div class="project-card" data-project="backup">
                             <div class="project-icon">
                                 <i class="fas fa-database"></i>
                             </div>
@@ -739,7 +786,7 @@
                             </div>
                         </div>
 
-                        <div class="project-card">
+                        <div class="project-card" data-project="monitoring">
                             <div class="project-icon">
                                 <i class="fas fa-chart-area"></i>
                             </div>
@@ -885,8 +932,9 @@
                             aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-icon" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="CV_Alternance_Raphael_HIRSCH.pdf" target="_blank" rel="noopener noreferrer"
+                            class="social-icon social-text" aria-label="CV">
+                            <span>CV</span>
                         </a>
                         <a href="#" class="social-icon" aria-label="Stack Overflow">
                             <i class="fab fa-stack-overflow"></i>
