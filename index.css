@@ -204,7 +204,8 @@ a:hover {
     top: 0;
     left: 0;
     right: 0;
-    z-index: var(--z-fixed);
+    z-index: 10000;
+    /* Ensure navbar is above everything including demo cursor */
     background-color: rgba(10, 14, 39, 0.8);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -645,7 +646,7 @@ section {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr;
     gap: var(--spacing-3xl);
     align-items: center;
 }
@@ -653,7 +654,10 @@ section {
 .about-image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: 0;
+    grid-column: 1;
 }
 
 .profile-img {
@@ -686,11 +690,20 @@ section {
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-md);
     line-height: 1.8;
+    text-align: justify;
+}
+
+.about-text {
+    text-align: center;
+    grid-column: 2;
+    /* Force text into center column */
 }
 
 .about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    /* Center the stats grid container */
+    flex-wrap: wrap;
     gap: var(--spacing-lg);
     margin-top: var(--spacing-xl);
 }
@@ -720,9 +733,12 @@ section {
 }
 
 .stat-number {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
+    /* Slightly reduced to fit if needed */
     font-weight: 800;
     color: var(--color-text-primary);
+    white-space: nowrap;
+    /* Ensure single line */
 }
 
 .stat-label {
@@ -822,9 +838,26 @@ section {
 }
 
 .interest-item.has-tooltip:hover::after,
-.interest-item.has-tooltip:hover::before {
+.interest-item.has-tooltip:hover::before,
+.interest-item.demo-active::after,
+.interest-item.demo-active::before {
     opacity: 1;
     visibility: visible;
+}
+
+/* Demo Cursor Styles */
+.demo-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23ffffff' d='M0 55.2V426c0 12.2 9.9 22 22 22 6.3 0 12.4-2.7 16.6-7.5L121.2 346l58.1 116.3c7.9 15.8 27.1 22.2 42.9 14.3l32.3-16.1c15.8-7.9 22.2-27.1 14.3-42.9L213.8 303h108.5c12.1 0 22-9.9 22-22 0-6.2-2.6-12.1-7.2-16.4l-292-224c-10.4-8-25.5-6.5-34 3.4C4.1 48.7 1.9 51.9 0 55.2z'/%3E%3Cpath fill='%23000000' opacity='0.2' d='M0 55.2V426c0 12.2 9.9 22 22 22 6.3 0 12.4-2.7 16.6-7.5L121.2 346l58.1 116.3c7.9 15.8 27.1 22.2 42.9 14.3l32.3-16.1c15.8-7.9 22.2-27.1 14.3-42.9L213.8 303h108.5c12.1 0 22-9.9 22-22 0-6.2-2.6-12.1-7.2-16.4l-292-224c-10.4-8-25.5-6.5-34 3.4C4.1 48.7 1.9 51.9 0 55.2z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 9500;
+    /* Below navbar (10000) */
+    pointer-events: none;
+    transition: left 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), top 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 /* ========================================
@@ -851,11 +884,7 @@ section {
     z-index: 60;
 }
 
-.skill-category:hover {
-    transform: translateY(-10px);
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-xl);
-}
+/* .skill-category:hover removed as per user request */
 
 .skill-icon {
     width: 70px;
@@ -878,33 +907,44 @@ section {
 
 .skill-items {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+}
+
+/* .skill-item:hover removed */
+
+.skill-item:hover .skill-name {
+    color: white;
 }
 
 .skill-info {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: var(--spacing-xs);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
 }
 
 .skill-name {
-    font-size: var(--font-size-sm);
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--color-text-secondary);
+    transition: color var(--transition-base);
 }
 
 .skill-percent {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    color: var(--color-primary-light);
+    display: none;
 }
 
 .skill-bar {
-    height: 8px;
-    background-color: var(--color-bg-tertiary);
-    border-radius: var(--radius-full);
-    overflow: hidden;
+    display: none;
 }
 
 .skill-progress {
@@ -961,7 +1001,8 @@ section {
     padding: var(--spacing-xl);
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    cursor: default;
+    /* Default cursor for non-clickable */
     transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
@@ -972,11 +1013,17 @@ section {
     scroll-snap-align: start;
 }
 
-.certification-card:hover {
+.certification-card[onclick] {
+    cursor: pointer;
+}
+
+.certification-card[onclick]:hover {
     transform: translateY(-5px);
     border-color: var(--color-primary);
     box-shadow: 0 10px 30px rgba(79, 70, 229, 0.2);
 }
+
+/* Base hover removed for non-clickable */
 
 .cert-icon {
     width: 60px;
@@ -1129,6 +1176,10 @@ section {
     overflow: hidden;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0;
+    margin-left: -60px;
+    /* Pull box left to cover dots */
+    padding-left: 60px;
+    /* Push content back */
 }
 
 .timeline-hidden-content.open {
@@ -1189,10 +1240,7 @@ section {
     z-index: 60;
 }
 
-.timeline-content:hover {
-    transform: translateX(10px);
-    border-color: var(--color-primary);
-}
+/* .timeline-content:hover removed */
 
 .timeline-date {
     display: inline-block;
@@ -1237,6 +1285,21 @@ section {
     font-size: var(--font-size-xs);
     color: var(--color-primary-light);
     font-weight: 500;
+}
+
+/* Styles pour les tags qui sont des liens */
+a.tag-link {
+    text-decoration: none;
+    transition: all var(--transition-base);
+    background: rgba(79, 70, 229, 0.2);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+a.tag-link:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 /* ========================================
@@ -1364,8 +1427,18 @@ section {
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all var(--transition-base);
-    cursor: pointer;
+    cursor: default;
     overflow: hidden;
+}
+
+.project-card[onclick] {
+    cursor: pointer;
+}
+
+.project-card[onclick]:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-xl);
 }
 
 .project-card::before {
@@ -1380,14 +1453,12 @@ section {
     transition: transform var(--transition-base);
 }
 
-.project-card:hover::before {
+.project-card[onclick]:hover::before {
     transform: scaleX(1);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-xl);
+    /* Removed border change for non-clickable */
 }
 
 .project-badge {

@@ -616,13 +616,11 @@ const translations = {
         'about.interests': 'Centres d\'intérêt',
         'about.interest.radio': 'Radio modélisme',
         'about.interest.roller': 'Roller freestyle',
-        'about.interest.camping': 'Camping',
-        'about.interest.reading': 'Lecture',
-        'about.interest.travel': 'Voyage',
+        'about.interest.hiking': 'Randonnée',
         'about.interest.triathlon': 'Triathlon',
         'about.tooltip.radio': 'Prise de vue par drone',
         'about.tooltip.roller': '11 ans de club\nParticipation au championnat de France 2018',
-        'about.tooltip.camping': 'Trek en haute montagne',
+        'about.tooltip.hiking': 'Trek en haute montagne',
         'about.tooltip.triathlon': 'Inscrit depuis 1 an en club',
         'about.stat.degree': 'en cours',
         'about.stat.projects': 'Projets réalisés',
@@ -769,14 +767,14 @@ const translations = {
         'about.desc2': 'Holder of a BTS SIO SISR option, my journey has allowed me to develop strong skills in infrastructure management, workstation migration, technology watch, and tool development with PowerShell. Passionate about new technologies, I thrive in solving complex problems.',
         'about.interests': 'Interests',
         'about.interest.radio': 'RC Modeling',
+        'about.interests': 'Interests',
+        'about.interest.radio': 'RC Modeling',
         'about.interest.roller': 'Freestyle Roller',
-        'about.interest.camping': 'Camping',
-        'about.interest.reading': 'Reading',
-        'about.interest.travel': 'Travel',
+        'about.interest.hiking': 'Hiking',
         'about.interest.triathlon': 'Triathlon',
         'about.tooltip.radio': 'Drone photography',
         'about.tooltip.roller': '11 years in club\nFrench Championship 2018 participation',
-        'about.tooltip.camping': 'High mountain trekking',
+        'about.tooltip.hiking': 'High mountain trekking',
         'about.tooltip.triathlon': 'Club member for 1 year',
         'about.stat.degree': 'in progress',
         'about.stat.projects': 'Projects completed',
@@ -1005,18 +1003,17 @@ function applyTranslations(lang) {
         const interestItems = aboutSection.querySelectorAll('.interest-item span');
         if (interestItems[0]) interestItems[0].textContent = t['about.interest.radio'];
         if (interestItems[1]) interestItems[1].textContent = t['about.interest.roller'];
-        if (interestItems[2]) interestItems[2].textContent = t['about.interest.camping'];
-        if (interestItems[3]) interestItems[3].textContent = t['about.interest.reading'];
-        if (interestItems[4]) interestItems[4].textContent = t['about.interest.travel'];
-        if (interestItems[5]) interestItems[5].textContent = t['about.interest.triathlon'];
+        if (interestItems[2]) interestItems[2].textContent = t['about.interest.hiking'];
+        if (interestItems[3]) interestItems[3].textContent = t['about.interest.triathlon'];
 
         const interestItemDivs = aboutSection.querySelectorAll('.interest-item');
         if (interestItemDivs[0]) interestItemDivs[0].setAttribute('data-tooltip', t['about.tooltip.radio']);
         if (interestItemDivs[1]) interestItemDivs[1].setAttribute('data-tooltip', t['about.tooltip.roller']);
-        if (interestItemDivs[2]) interestItemDivs[2].setAttribute('data-tooltip', t['about.tooltip.camping']);
-        if (interestItemDivs[5]) interestItemDivs[5].setAttribute('data-tooltip', t['about.tooltip.triathlon']);
+        if (interestItemDivs[2]) interestItemDivs[2].setAttribute('data-tooltip', t['about.tooltip.hiking']);
+        if (interestItemDivs[3]) interestItemDivs[3].setAttribute('data-tooltip', t['about.tooltip.triathlon']);
 
         const statLabels = aboutSection.querySelectorAll('.stat-label');
+
         if (statLabels[0]) statLabels[0].textContent = t['about.stat.degree'];
         if (statLabels[1]) statLabels[1].textContent = t['about.stat.projects'];
     }
@@ -1097,6 +1094,85 @@ function applyTranslations(lang) {
             if (companyEl && t[companyKey]) companyEl.textContent = t[companyKey];
             if (descEl && t[descKey]) descEl.textContent = t[descKey];
         });
+    }
+
+    // ========================================
+    // Ghost Mouse Animation for Tooltips
+    // ========================================
+    function playTooltipDemo() {
+        const interestsSection = document.querySelector('.about-interests');
+        const items = document.querySelectorAll('.interest-item.has-tooltip');
+        if (!interestsSection || items.length === 0) return;
+
+        // Create ghost cursor
+        const cursor = document.createElement('div');
+        cursor.classList.add('demo-cursor');
+        document.body.appendChild(cursor);
+
+        // Initial position (off-screen or near section)
+        const startRect = interestsSection.getBoundingClientRect();
+        const startScrollX = window.scrollX || window.pageXOffset;
+        const startScrollY = window.scrollY || window.pageYOffset;
+        cursor.style.left = `${startRect.right + startScrollX + 50}px`;
+        cursor.style.top = `${startRect.top + startScrollY + 100}px`;
+        cursor.style.opacity = '1';
+
+        // Sequence of moves
+        let delay = 500;
+        const moveDuration = 800;
+        const dwellDuration = 1200;
+
+        items.forEach((item, index) => {
+            setTimeout(() => {
+                const rect = item.getBoundingClientRect();
+                const scrollX = window.scrollX || window.pageXOffset;
+                const scrollY = window.scrollY || window.pageYOffset;
+
+                // Move to center of item (absolute document coordinates)
+                const targetX = rect.left + scrollX + rect.width / 2;
+                const targetY = rect.top + scrollY + rect.height / 2;
+
+                cursor.style.left = `${targetX}px`;
+                cursor.style.top = `${targetY}px`;
+
+                // Add active class after move
+                setTimeout(() => {
+                    item.classList.add('demo-active');
+                }, moveDuration);
+
+                // Remove active class after dwell
+                setTimeout(() => {
+                    item.classList.remove('demo-active');
+                }, moveDuration + dwellDuration);
+
+            }, delay);
+
+            delay += moveDuration + dwellDuration + 200; // Gap between items
+        });
+
+        // Hide and remove cursor at the end
+        setTimeout(() => {
+            cursor.style.opacity = '0';
+            setTimeout(() => {
+                cursor.remove();
+            }, 500);
+        }, delay);
+    }
+
+    // Trigger animation when section is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Wait a bit before starting
+                setTimeout(playTooltipDemo, 1000);
+                observer.disconnect(); // Run only once
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const interestsSectionObserver = document.querySelector('.about-interests');
+    if (interestsSectionObserver) {
+        observer.observe(interestsSectionObserver);
     }
 
     // Update toggle button text
