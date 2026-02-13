@@ -794,6 +794,11 @@ section {
     transform: translateY(-2px);
 }
 
+.interest-item.interest-link {
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
 /* Tooltip pour centres d'intérêt */
 .interest-item.has-tooltip {
     position: relative;
@@ -1479,9 +1484,9 @@ a.tag-link:hover {
 }
 
 .pro-badge {
-    background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%);
+    background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
     color: white;
-    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
 }
 
 .homelab-badge {
@@ -1489,6 +1494,8 @@ a.tag-link:hover {
     color: white;
     box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
 }
+
+
 
 .project-icon {
     width: 60px;
@@ -2113,4 +2120,8 @@ section {
     .lang-dropdown {
         right: -20px;
     }
+}
+
+.timeline-description {
+    white-space: pre-line;
 }

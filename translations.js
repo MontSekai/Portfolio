@@ -73,7 +73,7 @@ const translations = {
         'exp.micsi.date': '2025 - 2027 (en cours)',
         'exp.micsi.title': 'Mastère MICSI en alternance',
         'exp.micsi.company': 'CESI Châteauroux - Conseil départemental d\'Eure-et-Loir',
-        'exp.micsi.desc': 'Formation de niveau Bac+5 en Manager en Infrastructure et Cybersécurité des Systèmes d\'Information. Alternance au sein du Conseil départemental d\'Eure-et-Loir pour gérer et sécuriser l\'infrastructure informatique départementale.',
+        'exp.micsi.desc': 'Formation de niveau Bac+5 en Management des Infrastructures et Cybersécurité.\nCompétences clés :\n- Conception et urbanisation des SI (Design réseaux, infrastructures virtuelles et Cloud).\n- Sécurisation et Audit (DevSecOps, normes cybersécurité, sécurité du Cloud).\n- Management et Gestion de projet (Pilotage de portefeuille, méthodes Agiles, conduite du changement).\n- Alternance : Gestion et sécurisation de l\'infrastructure départementale.',
 
         'exp.bachelor.date': '2024 - 2025',
         'exp.bachelor.title': 'Bachelor ASR en alternance',
@@ -106,6 +106,7 @@ const translations = {
         'projects.school': 'Projet Scolaire',
         'projects.pro': 'Projet Pro',
         'projects.homelab': 'Home Lab',
+
         'projects.coming': 'Projet à venir',
         'projects.coming.desc': 'Emplacement réservé pour un futur projet à ajouter.',
 
@@ -126,6 +127,8 @@ const translations = {
         'project.rpi-ansible.desc': 'Mise en place d\'un environnement Home Lab sur Raspberry Pi 5 avec Raspberry Pi OS Lite. Installation de Docker et Portainer pour la gestion de conteneurs. Déploiement de 3 conteneurs Debian Trixie et configuration d\'Ansible pour l\'orchestration, le test de playbooks et l\'apprentissage des solutions d\'automatisation.',
         'project.portfolio.title': 'Portfolio Personnel',
         'project.portfolio.desc': 'Conception et développement de ce portfolio interactif pour présenter mes compétences et projets. Utilisation de HTML5, CSS3, JavaScript (ES6+), et intégration de Canvas pour l\'animation d\'arrière-plan. Hébergé sur GitHub Pages.',
+        'project.unity-game.title': 'Jeu Vidéo RPG - Unity & AI',
+        'project.unity-game.desc': 'Développement d\'un RPG sur Unity assisté par l\'IA Google Antigravity. Gestion complète backend : base de données SQL, authentification sécurisée et hébergement pour accès multijoueur. Collaboration avec un graphiste professionnel pour la direction artistique.',
 
         // Contact
         'contact.tag': 'Restons en contact',
@@ -230,7 +233,7 @@ const translations = {
         'exp.micsi.date': '2025 - 2027 (ongoing)',
         'exp.micsi.title': 'Master\'s MICSI Work-Study',
         'exp.micsi.company': 'CESI Châteauroux - Eure-et-Loir Departmental Council',
-        'exp.micsi.desc': 'Master\'s degree (Bac+5) in IT Infrastructure and Cybersecurity Management. Work-study at the Eure-et-Loir Departmental Council to manage and secure the departmental IT infrastructure.',
+        'exp.micsi.desc': 'Master\'s Degree in Infrastructure Management and Cybersecurity.\nKey Skills:\n- IS Design & Urbanization (Network design, Virtual & Cloud infrastructures).\n- Security & Audit (DevSecOps, cybersecurity standards, Cloud security).\n- Management & Project Management (Portfolio steering, Agile methods, change management).\n- Work-study: Management and security of the departmental infrastructure.',
 
         'exp.bachelor.date': '2024 - 2025',
         'exp.bachelor.title': 'Bachelor ASR Work-Study',
@@ -283,6 +286,8 @@ const translations = {
         'project.rpi-ansible.desc': 'Setup of a Home Lab environment on Raspberry Pi 5 with Raspberry Pi OS Lite. Installation of Docker and Portainer for container management. Deployment of 3 Debian Trixie containers and Ansible configuration for orchestration, playbook testing, and automation learning.',
         'project.portfolio.title': 'Personal Portfolio',
         'project.portfolio.desc': 'Design and development of this interactive portfolio to showcase my skills and projects. Using HTML5, CSS3, JavaScript (ES6+), and Canvas integration for background animation. Hosted on GitHub Pages.',
+        'project.unity-game.title': 'RPG Video Game - Unity & AI',
+        'project.unity-game.desc': 'Development of an RPG on Unity assisted by Google Antigravity AI. Full backend management: SQL database, secure authentication, and hosting for multiplayer access. Collaboration with a professional graphic designer for art direction.',
 
         // Contact
         'contact.tag': 'Get in touch',

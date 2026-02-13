@@ -901,6 +901,8 @@ function applyTranslations(lang) {
         const homelabBadges = projectsSection.querySelectorAll('.homelab-badge');
         homelabBadges.forEach(badge => badge.textContent = t['projects.homelab']);
 
+
+
         // Update individual project cards
         const projectCards = projectsSection.querySelectorAll('.project-card[data-project]');
         projectCards.forEach(card => {
