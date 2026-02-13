@@ -1484,6 +1484,12 @@ a.tag-link:hover {
     box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
 }
 
+.homelab-badge {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
 .project-icon {
     width: 60px;
     height: 60px;
