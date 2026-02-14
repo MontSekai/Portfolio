@@ -1274,6 +1274,7 @@ section {
     color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: var(--spacing-md);
+    white-space: pre-line;
 }
 
 .timeline-tags {
@@ -2124,4 +2125,176 @@ section {
 
 .timeline-description {
     white-space: pre-line;
+}
+
+/* =========================================
+   Goals & Learning Section - Refined Style
+   ========================================= */
+.goals {
+    padding: 100px 0;
+    position: relative;
+    z-index: 10;
+    background-color: var(--color-bg-secondary);
+    /* Match experience or projects bg */
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.goal-column-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-primary);
+    /* Use theme variable */
+}
+
+.goal-column-title i {
+    color: var(--color-secondary);
+}
+
+/* Reuse project card styling for goals */
+.goal-card {
+    background: var(--color-bg-card-opaque);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    margin-bottom: 20px;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 60;
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-xl);
+}
+
+.goal-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-accent);
+    /* Standardize gradient */
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 15px;
+    transition: var(--transition-base);
+}
+
+.goal-card:hover .goal-icon {
+    transform: scale(1.1);
+}
+
+.current-focus .goal-icon {
+    /* Optional: distinct color for current focus if needed, or keep uniform */
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+.goal-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.goal-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+}
+
+.goal-org {
+    font-size: 0.9rem;
+    color: var(--color-primary-light);
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.goal-description {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.goal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+/* Responsive adjustments for goals */
+@media (max-width: 768px) {
+    .goals-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styles for merged future goals card */
+.goal-option {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 10px 0;
+}
+
+.goal-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.goal-separator::before,
+.goal-separator::after {
+    content: '';
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    flex: 1;
+    margin: 0 15px;
+}
+
+.goal-separator span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+    .goal-option {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .goal-option .goal-icon {
+        margin: 0 auto 15px;
+    }
 }

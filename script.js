@@ -660,7 +660,9 @@ function applyTranslations(lang) {
         if (href === '#about') link.textContent = t['nav.about'];
         if (href === '#skills') link.textContent = t['nav.skills'];
         if (href === '#experience') link.textContent = t['nav.experience'];
+        if (href === '#experience') link.textContent = t['nav.experience'];
         if (href === '#projects') link.textContent = t['nav.projects'];
+        if (href === '#goals') link.textContent = t['nav.goals'];
         if (href === '#contact') link.textContent = t['nav.contact'];
     });
 
@@ -794,6 +796,54 @@ function applyTranslations(lang) {
             if (companyEl && t[companyKey]) companyEl.textContent = t[companyKey];
             if (descEl && t[descKey]) descEl.textContent = t[descKey];
         });
+    }
+
+    // Goals Section
+    // Goals Section
+    const goalsSection = document.getElementById('goals');
+    if (goalsSection) {
+        // Manual handling for elements without data-i18n
+        const goalsTag = goalsSection.querySelector('.section-tag');
+        if (goalsTag) goalsTag.textContent = t['goals.tag'];
+
+        const goalsTitle = goalsSection.querySelector('.section-title');
+        if (goalsTitle) goalsTitle.textContent = t['goals.title'];
+
+        const colTitles = goalsSection.querySelectorAll('.goal-column-title');
+        // First column "Current Focus" (no data-i18n in HTML yet)
+        if (colTitles[0]) colTitles[0].innerHTML = `<i class="fas fa-microchip"></i> ${t['goals.current.title']}`;
+
+        // Second column "Future Goals" HAS data-i18n, so generic handler will cover it, BUT
+        // we need to ensure the icon is preserved. The generic handler does that. 
+        // So we don't need manual handling for colTitles[1] anymore.
+
+        // Generic data-i18n handler for this section
+        const translatableElements = goalsSection.querySelectorAll('[data-i18n]');
+        translatableElements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key]) {
+                // Preserve icons if present at start of element
+                const icon = el.querySelector('i');
+                if (icon && el.firstChild === icon) {
+                    // Update text node only
+                    const textNode = Array.from(el.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+                    if (textNode) {
+                        textNode.textContent = ' ' + t[key];
+                    } else {
+                        el.appendChild(document.createTextNode(' ' + t[key]));
+                    }
+                } else {
+                    el.textContent = t[key];
+                }
+            }
+        });
+
+        // Current Focus cards (manual handling as they lack data-i18n specific ID/logic in HTML)
+        const focusCard = goalsSection.querySelector('.current-focus');
+        if (focusCard) {
+            focusCard.querySelector('.goal-title').textContent = t['goal.focus.title'];
+            focusCard.querySelector('.goal-description').textContent = t['goal.focus.desc'];
+        }
     }
 
     // ========================================

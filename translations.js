@@ -6,6 +6,7 @@ const translations = {
         'nav.skills': 'Compétences',
         'nav.experience': 'Expérience',
         'nav.projects': 'Projets',
+        'nav.goals': 'Objectifs',
         'nav.contact': 'Contact',
 
         // Hero Section
@@ -78,7 +79,7 @@ const translations = {
         'exp.bachelor.date': '2024 - 2025',
         'exp.bachelor.title': 'Bachelor ASR en alternance',
         'exp.bachelor.company': 'CESI Châteauroux - Conseil départemental d\'Eure-et-Loir',
-        'exp.bachelor.desc': 'Bachelor Administrateur Systèmes et Réseaux en alternance. Administration et maintenance de l\'infrastructure IT du Conseil départemental. Projet majeur : remplacement de la solution EDR existante par un XDR avec tests et évaluation de plusieurs solutions du marché. Travail sur diverses solutions de sécurité et d\'infrastructure incluant WAF, Protection Serveur, gestion de projets et participation à la sécurisation du SI.',
+        'exp.bachelor.desc': 'Bachelor Administrateur Systèmes et Réseaux.\nCompétences acquises :\n- Modélisation et déploiement d\'infrastructures (Windows/Linux, Virtualisation, Cloud, Réseaux LAN/WAN).\n- Maintien et sécurisation des SI (Sécurité, Supervision, DevOps).\n- Management de projet (Méthodes Agiles, gestion d\'équipe).\nAlternance : Administration et sécurisation de l\'infrastructure du Conseil départemental (Projet XDR).',
 
         'exp.tech-hopital.date': '01/06 - 30/08 2024',
         'exp.tech-hopital.title': 'Technicien',
@@ -130,6 +131,25 @@ const translations = {
         'project.unity-game.title': 'Jeu Vidéo RPG - Unity & AI',
         'project.unity-game.desc': 'Développement d\'un RPG sur Unity assisté par l\'IA Google Antigravity. Gestion complète backend : base de données SQL, authentification sécurisée et hébergement pour accès multijoueur. Collaboration avec un graphiste professionnel pour la direction artistique.',
 
+        // Goals Section
+        'goals.tag': 'Perspectives',
+        'goals.title': 'Apprentissage & Objectifs',
+        'goals.current.title': 'En ce moment',
+        'goals.future.title': 'Objectifs 2027',
+
+        'goal.focus.title': 'DevOps & Home Lab',
+        'goal.focus.desc': 'Auto-formation approfondie sur les technologies de conteneurisation et d\'automatisation. Mise en place d\'un Home Lab complet pour simuler des environnements de production.',
+
+        'goal.future.title': 'Objectifs 2028',
+        'goal.separator': 'OU',
+        'goal.uqo.title': 'D.E.S.S. en Cybersécurité',
+        'goal.uqo.org': 'UQO - Université du Québec en Outaouais',
+        'goal.uqo.desc': 'Programme d\'études supérieures spécialisées axé sur la conception de solutions de cyberdéfense et la gestion des incidents de sécurité.',
+
+        'goal.essi.title': 'Expert SSI (ESSI)',
+        'goal.essi.org': 'ANSSI - Agence Nationale de la Sécurité des Systèmes d\'Information',
+        'goal.essi.desc': 'Titre d\'expert reconnu par l\'État, visant à former les cadres de la sécurité des systèmes d\'information (audit, analyse de risques, gestion de crise).',
+
         // Contact
         'contact.tag': 'Restons en contact',
         'contact.title': 'Contactez-moi',
@@ -166,6 +186,7 @@ const translations = {
         'nav.skills': 'Skills',
         'nav.experience': 'Experience',
         'nav.projects': 'Projects',
+        'nav.goals': 'Goals',
         'nav.contact': 'Contact',
 
         // Hero Section
@@ -238,7 +259,7 @@ const translations = {
         'exp.bachelor.date': '2024 - 2025',
         'exp.bachelor.title': 'Bachelor ASR Work-Study',
         'exp.bachelor.company': 'CESI Châteauroux - Eure-et-Loir Departmental Council',
-        'exp.bachelor.desc': 'Bachelor\'s in System and Network Administration as work-study. Administration and maintenance of the Departmental Council\'s IT infrastructure. Major project: replacement of the existing EDR solution with an XDR through testing and evaluation of several market solutions. Work on various security and infrastructure solutions including WAF, Server Protection, project management and participation in IS security.',
+        'exp.bachelor.desc': 'Bachelor in System and Network Administration.\nAcquired Skills:\n- Infrastructure Modeling & Deployment (Windows/Linux, Virtualization, Cloud, LAN/WAN Networks).\n- IS Maintenance & Security (Security, Monitoring, DevOps).\n- Project Management (Agile Methods, Team Management).\nWork-study: Administration and security of the departmental infrastructure (XDR Project).',
 
         'exp.tech-hopital.date': '06/01 - 08/30 2024',
         'exp.tech-hopital.title': 'Technician',
@@ -288,6 +309,25 @@ const translations = {
         'project.portfolio.desc': 'Design and development of this interactive portfolio to showcase my skills and projects. Using HTML5, CSS3, JavaScript (ES6+), and Canvas integration for background animation. Hosted on GitHub Pages.',
         'project.unity-game.title': 'RPG Video Game - Unity & AI',
         'project.unity-game.desc': 'Development of an RPG on Unity assisted by Google Antigravity AI. Full backend management: SQL database, secure authentication, and hosting for multiplayer access. Collaboration with a professional graphic designer for art direction.',
+
+        // Goals Section
+        'goals.tag': 'Perspectives',
+        'goals.title': 'Learning & Goals',
+        'goals.current.title': 'Currently',
+        'goals.future.title': '2027 Objectives',
+
+        'goal.focus.title': 'DevOps & Home Lab',
+        'goal.focus.desc': 'In-depth self-training on containerization and automation technologies. Setting up a complete Home Lab to simulate production environments.',
+
+        'goal.future.title': 'Goals 2028',
+        'goal.separator': 'OR',
+        'goal.uqo.title': 'D.E.S.S. in Cybersecurity',
+        'goal.uqo.org': 'UQO - University of Quebec in Outaouais',
+        'goal.uqo.desc': 'Specialized graduate studies program focused on designing cyber defense solutions and managing security incidents.',
+
+        'goal.essi.title': 'SSI Expert (ESSI)',
+        'goal.essi.org': 'ANSSI - National Cybersecurity Agency of France',
+        'goal.essi.desc': 'State-recognized expert title, aimed at training information systems security executives (audit, risk analysis, crisis management).',
 
         // Contact
         'contact.tag': 'Get in touch',

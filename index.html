@@ -64,6 +64,7 @@
                 <li class="nav-item"><a href="#skills" class="nav-link">Compétences</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Expérience</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projets</a></li>
+                <li class="nav-item"><a href="#goals" class="nav-link">Objectifs</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="lang-switcher" id="langSwitcher">
@@ -590,12 +591,14 @@
                         <h3 class="timeline-title">Bachelor ASR en alternance</h3>
                         <h4 class="timeline-company">CESI Châteauroux - Conseil départemental d'Eure-et-Loir</h4>
                         <p class="timeline-description">
-                            Bachelor Administrateur Systèmes et Réseaux en alternance. Administration et
-                            maintenance de l'infrastructure IT du Conseil départemental. Projet majeur : remplacement
-                            de la solution EDR existante par un XDR avec tests et évaluation de plusieurs solutions
-                            du marché (Vision One, CrowdStrike, Cortex). Travail sur diverses solutions de sécurité
-                            et d'infrastructure incluant UBIKA, Serveur Protect, gestion de projets et participation
-                            à la sécurisation du SI.
+                            Bachelor Administrateur Systèmes et Réseaux.
+                            Compétences acquises :
+                            - Modélisation et déploiement d'infrastructures (Windows/Linux, Virtualisation, Cloud,
+                            Réseaux LAN/WAN).
+                            - Maintien et sécurisation des SI (Sécurité, Supervision, DevOps).
+                            - Management de projet (Méthodes Agiles, gestion d'équipe).
+                            Alternance : Administration et sécurisation de l'infrastructure du Conseil départemental
+                            (Projet XDR).
                         </p>
                         <div class="timeline-tags">
                             <span class="tag">Bachelor</span>
@@ -698,211 +701,296 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Réalisations</span>
-                <h2 class="section-title">Projets</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="projects-carousel">
-                <button class="carousel-btn carousel-prev" id="projectsPrev" aria-label="Projets précédents">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-btn carousel-next" id="projectsNext" aria-label="Projets suivants">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
 
-                <div class="projects-wrapper">
-                    <!-- Page 1 -->
-                    <div class="projects-grid active" data-page="1">
-                        <div class="project-card" data-project="doc-bts"
-                            onclick="window.open('https://thibaultt28.github.io/Doc_2024_Chartres_SIO2/', '_blank')">
-                            <span class="project-badge school-badge">Projet Scolaire</span>
-                            <div class="project-icon">
-                                <i class="fas fa-book"></i>
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Réalisations</span>
+                    <h2 class="section-title">Projets</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-carousel">
+                    <button class="carousel-btn carousel-prev" id="projectsPrev" aria-label="Projets précédents">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="projectsNext" aria-label="Projets suivants">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="projects-wrapper">
+                        <!-- Page 1 -->
+                        <div class="projects-grid active" data-page="1">
+                            <div class="project-card" data-project="doc-bts"
+                                onclick="window.open('https://thibaultt28.github.io/Doc_2024_Chartres_SIO2/', '_blank')">
+                                <span class="project-badge school-badge">Projet Scolaire</span>
+                                <div class="project-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3 class="project-title">Documentation BTS SIO 2024</h3>
+                                <p class="project-description">
+                                    Projet de documentation collaborative réalisé en 2ème année de BTS SIO option SISR.
+                                    Site web présentant les compétences techniques et projets développés au cours de la
+                                    formation.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">HTML/CSS</span>
+                                    <span class="tech-badge">GitHub Pages</span>
+                                    <span class="tech-badge">Documentation</span>
+                                </div>
+                                <div class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </div>
                             </div>
-                            <h3 class="project-title">Documentation BTS SIO 2024</h3>
-                            <p class="project-description">
-                                Projet de documentation collaborative réalisé en 2ème année de BTS SIO option SISR.
-                                Site web présentant les compétences techniques et projets développés au cours de la
-                                formation.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">HTML/CSS</span>
-                                <span class="tech-badge">GitHub Pages</span>
-                                <span class="tech-badge">Documentation</span>
+
+                            <div class="project-card" data-project="edr-xdr">
+                                <span class="project-badge pro-badge">Projet Pro</span>
+                                <div class="project-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3 class="project-title">Remplacement EDR par XDR</h3>
+                                <p class="project-description">
+                                    Projet de remplacement de la solution EDR existante par une solution XDR au sein du
+                                    Conseil départemental. Réalisation de phases de tests et d'évaluation comparative
+                                    sur
+                                    plusieurs solutions du marché (Vision One, CrowdStrike, Cortex).
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">XDR</span>
+                                    <span class="tech-badge">EDR</span>
+                                    <span class="tech-badge">Comparatif Solutions</span>
+                                    <span class="tech-badge">Cybersécurité</span>
+                                </div>
                             </div>
-                            <div class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
+
+                            <div class="project-card" data-project="vmware">
+                                <div class="project-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <h3 class="project-title">Virtualisation VMware vSphere</h3>
+                                <p class="project-description">
+                                    Mise en place d'un cluster VMware vSphere avec vMotion, DRS et HA pour
+                                    optimiser l'utilisation des ressources et la disponibilité.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Hyperviseur</span>
+                                    <span class="tech-badge">Gestion Cluster</span>
+                                    <span class="tech-badge">Baie SAN</span>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="powershell">
+                                <div class="project-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3 class="project-title">Automatisation PowerShell</h3>
+                                <p class="project-description">
+                                    Développement de scripts PowerShell pour automatiser la gestion des utilisateurs
+                                    AD, le provisioning de VMs et les rapports de conformité.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">PowerShell</span>
+                                    <span class="tech-badge">Active Directory</span>
+                                    <span class="tech-badge">Task Scheduler</span>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="backup">
+                                <div class="project-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h3 class="project-title">Système de Sauvegarde Centralisé</h3>
+                                <p class="project-description">
+                                    Implémentation d'une solution de sauvegarde centralisée avec Veeam Backup &
+                                    Replication pour 200+ serveurs virtuels et physiques.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Solution Sauvegarde</span>
+                                    <span class="tech-badge">NAS</span>
+                                    <span class="tech-badge">Stratégie 3-2-1</span>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="monitoring">
+                                <div class="project-icon">
+                                    <i class="fas fa-chart-area"></i>
+                                </div>
+                                <h3 class="project-title">Monitoring & Supervision</h3>
+                                <p class="project-description">
+                                    Déploiement d'une plateforme de monitoring complète avec Zabbix pour surveiller
+                                    l'infrastructure réseau, les serveurs et les applications critiques.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Supervision</span>
+                                    <span class="tech-badge">SNMP</span>
+                                    <span class="tech-badge">Visualisation</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="project-card" data-project="edr-xdr">
-                            <span class="project-badge pro-badge">Projet Pro</span>
-                            <div class="project-icon">
-                                <i class="fas fa-shield-alt"></i>
+                        <!-- Page 2 - À compléter -->
+                        <!-- Page 2 - À compléter -->
+                        <div class="projects-grid" data-page="2">
+                            <!-- Project: RPi Ansible Lab -->
+                            <div class="project-card" data-project="rpi-ansible">
+                                <span class="project-badge homelab-badge">Home Lab</span>
+                                <div class="project-icon">
+                                    <i class="fab fa-raspberry-pi"></i>
+                                </div>
+                                <h3 class="project-title">Cluster Ansible sur Raspberry Pi 5</h3>
+                                <p class="project-description">
+                                    Mise en place d'un environnement Home Lab sur Raspberry Pi 5 avec Raspberry Pi OS
+                                    Lite.
+                                    Installation de Docker et Portainer pour la gestion de conteneurs. Déploiement de 3
+                                    conteneurs Debian Trixie et configuration d'Ansible.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Raspberry Pi 5</span>
+                                    <span class="tech-badge">Docker</span>
+                                    <span class="tech-badge">Ansible</span>
+                                    <span class="tech-badge">Portainer</span>
+                                    <span class="tech-badge">Debian</span>
+                                </div>
                             </div>
-                            <h3 class="project-title">Remplacement EDR par XDR</h3>
-                            <p class="project-description">
-                                Projet de remplacement de la solution EDR existante par une solution XDR au sein du
-                                Conseil départemental. Réalisation de phases de tests et d'évaluation comparative sur
-                                plusieurs solutions du marché (Vision One, CrowdStrike, Cortex).
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">XDR</span>
-                                <span class="tech-badge">EDR</span>
-                                <span class="tech-badge">Comparatif Solutions</span>
-                                <span class="tech-badge">Cybersécurité</span>
-                            </div>
-                        </div>
 
-                        <div class="project-card" data-project="vmware">
-                            <div class="project-icon">
-                                <i class="fas fa-server"></i>
+                            <!-- Project: Portfolio -->
+                            <div class="project-card" data-project="portfolio">
+                                <span class="project-badge homelab-badge">Home Lab</span>
+                                <div class="project-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3 class="project-title">Portfolio Personnel</h3>
+                                <p class="project-description">
+                                    Conception et développement de ce portfolio interactif pour présenter mes
+                                    compétences et
+                                    projets. Utilisation de HTML5, CSS3, JavaScript (ES6+), et intégration de Canvas
+                                    pour
+                                    l'animation d'arrière-plan.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">HTML/CSS/JS</span>
+                                    <span class="tech-badge">Canvas API</span>
+                                    <span class="tech-badge">Responsive</span>
+                                    <span class="tech-badge">GitHub Pages</span>
+                                </div>
+                                <div class="project-link">
+                                    <a href="https://github.com/MontSekai/Portfolio" target="_blank"
+                                        style="color: inherit;"><i class="fab fa-github"></i></a>
+                                </div>
                             </div>
-                            <h3 class="project-title">Virtualisation VMware vSphere</h3>
-                            <p class="project-description">
-                                Mise en place d'un cluster VMware vSphere avec vMotion, DRS et HA pour
-                                optimiser l'utilisation des ressources et la disponibilité.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">Hyperviseur</span>
-                                <span class="tech-badge">Gestion Cluster</span>
-                                <span class="tech-badge">Baie SAN</span>
-                            </div>
-                        </div>
 
-                        <div class="project-card" data-project="powershell">
-                            <div class="project-icon">
-                                <i class="fas fa-robot"></i>
+                            <!-- Project: Unity Game -->
+                            <div class="project-card" data-project="unity-game">
+                                <span class="project-badge homelab-badge">Home Lab</span>
+                                <div class="project-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <h3 class="project-title">Jeu Vidéo RPG - Unity & IA</h3>
+                                <p class="project-description">
+                                    Développement d'un RPG sur Unity assisté par l'IA Google Antigravity. Gestion
+                                    complète
+                                    backend : base de données SQL, authentification sécurisée et hébergement pour accès
+                                    multijoueur. Collaboration avec un graphiste professionnel.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Unity / C#</span>
+                                    <span class="tech-badge">IA Antigravity</span>
+                                    <span class="tech-badge">SQL / Auth</span>
+                                    <span class="tech-badge">Multiplayer</span>
+                                </div>
+                                <div class="project-link">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
                             </div>
-                            <h3 class="project-title">Automatisation PowerShell</h3>
-                            <p class="project-description">
-                                Développement de scripts PowerShell pour automatiser la gestion des utilisateurs
-                                AD, le provisioning de VMs et les rapports de conformité.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">PowerShell</span>
-                                <span class="tech-badge">Active Directory</span>
-                                <span class="tech-badge">Task Scheduler</span>
-                            </div>
-                        </div>
 
-                        <div class="project-card" data-project="backup">
-                            <div class="project-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <h3 class="project-title">Système de Sauvegarde Centralisé</h3>
-                            <p class="project-description">
-                                Implémentation d'une solution de sauvegarde centralisée avec Veeam Backup &
-                                Replication pour 200+ serveurs virtuels et physiques.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">Solution Sauvegarde</span>
-                                <span class="tech-badge">NAS</span>
-                                <span class="tech-badge">Stratégie 3-2-1</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card" data-project="monitoring">
-                            <div class="project-icon">
-                                <i class="fas fa-chart-area"></i>
-                            </div>
-                            <h3 class="project-title">Monitoring & Supervision</h3>
-                            <p class="project-description">
-                                Déploiement d'une plateforme de monitoring complète avec Zabbix pour surveiller
-                                l'infrastructure réseau, les serveurs et les applications critiques.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">Supervision</span>
-                                <span class="tech-badge">SNMP</span>
-                                <span class="tech-badge">Visualisation</span>
-                            </div>
+                            <!-- Les placeholder cards seront générées dynamiquement par JS -->
                         </div>
                     </div>
 
-                    <!-- Page 2 - À compléter -->
-                    <!-- Page 2 - À compléter -->
-                    <div class="projects-grid" data-page="2">
-                        <!-- Project: RPi Ansible Lab -->
-                        <div class="project-card" data-project="rpi-ansible">
-                            <span class="project-badge homelab-badge">Home Lab</span>
-                            <div class="project-icon">
-                                <i class="fab fa-raspberry-pi"></i>
-                            </div>
-                            <h3 class="project-title">Cluster Ansible sur Raspberry Pi 5</h3>
-                            <p class="project-description">
-                                Mise en place d'un environnement Home Lab sur Raspberry Pi 5 avec Raspberry Pi OS Lite.
-                                Installation de Docker et Portainer pour la gestion de conteneurs. Déploiement de 3
-                                conteneurs Debian Trixie et configuration d'Ansible.
+                    <div class="carousel-indicators">
+                        <button class="indicator active" data-page="1" aria-label="Page 1"></button>
+                        <button class="indicator" data-page="2" aria-label="Page 2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- Goals & Learning Section -->
+    <section class="goals" id="goals">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Perspectives</span>
+                <h2 class="section-title">Apprentissage & Objectifs</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="goals-grid">
+                <!-- Column 1: Current Focus -->
+                <div class="goal-column">
+                    <h3 class="goal-column-title"><i class="fas fa-microchip"></i> En ce moment</h3>
+                    <div class="goal-card current-focus">
+                        <div class="goal-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h4 class="goal-title">DevOps & Home Lab</h4>
+                            <p class="goal-description">
+                                Auto-formation approfondie sur les technologies de conteneurisation et d'automatisation.
+                                Mise en place d'un Home Lab complet pour simuler des environnements de production.
                             </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">Raspberry Pi 5</span>
-                                <span class="tech-badge">Docker</span>
-                                <span class="tech-badge">Ansible</span>
-                                <span class="tech-badge">Portainer</span>
-                                <span class="tech-badge">Debian</span>
+                            <div class="goal-tags">
+                                <span class="tech-badge"><i class="fab fa-docker"></i> Docker</span>
+                                <span class="tech-badge"><i class="fas fa-sitemap"></i> Ansible</span>
+                                <span class="tech-badge"><i class="fas fa-server"></i> Self-Hosting</span>
                             </div>
                         </div>
-
-                        <!-- Project: Portfolio -->
-                        <div class="project-card" data-project="portfolio">
-                            <span class="project-badge homelab-badge">Home Lab</span>
-                            <div class="project-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3 class="project-title">Portfolio Personnel</h3>
-                            <p class="project-description">
-                                Conception et développement de ce portfolio interactif pour présenter mes compétences et
-                                projets. Utilisation de HTML5, CSS3, JavaScript (ES6+), et intégration de Canvas pour
-                                l'animation d'arrière-plan.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">HTML/CSS/JS</span>
-                                <span class="tech-badge">Canvas API</span>
-                                <span class="tech-badge">Responsive</span>
-                                <span class="tech-badge">GitHub Pages</span>
-                            </div>
-                            <div class="project-link">
-                                <a href="https://github.com/MontSekai/Portfolio" target="_blank"
-                                    style="color: inherit;"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Project: Unity Game -->
-                        <div class="project-card" data-project="unity-game">
-                            <span class="project-badge homelab-badge">Home Lab</span>
-                            <div class="project-icon">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
-                            <h3 class="project-title">Jeu Vidéo RPG - Unity & IA</h3>
-                            <p class="project-description">
-                                Développement d'un RPG sur Unity assisté par l'IA Google Antigravity. Gestion complète
-                                backend : base de données SQL, authentification sécurisée et hébergement pour accès
-                                multijoueur. Collaboration avec un graphiste professionnel.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge">Unity / C#</span>
-                                <span class="tech-badge">IA Antigravity</span>
-                                <span class="tech-badge">SQL / Auth</span>
-                                <span class="tech-badge">Multiplayer</span>
-                            </div>
-                            <div class="project-link">
-                                <i class="fas fa-code-branch"></i>
-                            </div>
-                        </div>
-
-                        <!-- Les placeholder cards seront générées dynamiquement par JS -->
                     </div>
                 </div>
 
-                <div class="carousel-indicators">
-                    <button class="indicator active" data-page="1" aria-label="Page 1"></button>
-                    <button class="indicator" data-page="2" aria-label="Page 2"></button>
+                <!-- Column 2: Future Goals (2028) -->
+                <div class="goal-column">
+                    <h3 class="goal-column-title" data-i18n="goal.future.title"><i class="fas fa-bullseye"></i>
+                        Objectifs 2028</h3>
+                    <div class="goal-card future-goal">
+                        <!-- Option 1: UQO -->
+                        <div class="goal-option">
+                            <div class="goal-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="goal-content">
+                                <h4 class="goal-title" data-i18n="goal.uqo.title">D.E.S.S. en Cybersécurité</h4>
+                                <p class="goal-org" data-i18n="goal.uqo.org">UQO - Université du Québec en Outaouais</p>
+                                <p class="goal-description" data-i18n="goal.uqo.desc">
+                                    Programme d'études supérieures spécialisées axé sur la conception de solutions de
+                                    cyberdéfense et la gestion des incidents de sécurité.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Separator -->
+                        <div class="goal-separator">
+                            <span data-i18n="goal.separator">OU</span>
+                        </div>
+
+                        <!-- Option 2: ANSSI -->
+                        <div class="goal-option">
+                            <div class="goal-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="goal-content">
+                                <h4 class="goal-title" data-i18n="goal.essi.title">Expert SSI (ESSI)</h4>
+                                <p class="goal-org" data-i18n="goal.essi.org">ANSSI - Agence Nationale de la Sécurité
+                                    des Systèmes d'Information</p>
+                                <p class="goal-description" data-i18n="goal.essi.desc">
+                                    Titre d'expert reconnu par l'État, visant à former les cadres de la sécurité des
+                                    systèmes d'information
+                                    (audit, analyse de risques, gestion de crise).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
