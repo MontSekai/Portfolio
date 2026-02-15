@@ -798,7 +798,8 @@ function applyTranslations(lang) {
         });
     }
 
-    // Goals Section
+
+
     // Goals Section
     const goalsSection = document.getElementById('goals');
     if (goalsSection) {
@@ -964,7 +965,14 @@ function applyTranslations(lang) {
             const descEl = card.querySelector('.project-description');
 
             if (titleEl && t[titleKey]) titleEl.textContent = t[titleKey];
-            if (descEl && t[descKey]) descEl.textContent = t[descKey];
+            if (descEl) {
+                let text = t[descKey];
+                const shortDescKey = `project.${projectId}.desc.short`;
+                if (window.innerWidth <= 480 && t[shortDescKey]) {
+                    text = t[shortDescKey];
+                }
+                if (text) descEl.textContent = text;
+            }
         });
 
         // Update placeholder cards
@@ -1105,3 +1113,64 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfolio chargé et prêt !');
 });
 
+
+// ========================================
+// Mobile Infinite Scroll & Layout Unification
+// ========================================
+function setupMobileInfiniteScroll() {
+    // Only run on mobile
+    if (window.innerWidth > 480) return;
+
+    const grids = document.querySelectorAll('.projects-grid');
+    if (grids.length < 1) return;
+
+    const mainGrid = grids[0];
+
+    // 1. Consolidate all cards into mainGrid (Mobile only)
+    if (!mainGrid.classList.contains('mobile-consolidated')) {
+        grids.forEach((grid, index) => {
+            if (index === 0) return; // Skip main grid
+            const cards = Array.from(grid.querySelectorAll('.project-card'));
+            cards.forEach(card => {
+                mainGrid.appendChild(card);
+            });
+            grid.style.display = 'none'; // Hide the empty grid container
+        });
+        mainGrid.classList.add('mobile-consolidated');
+    }
+
+    // 2. Infinite Scroll Logic (Clone & Reset)
+    // Remove old clones to prevent accumulation
+    mainGrid.querySelectorAll('.clone-card').forEach(el => el.remove());
+
+    const allCards = Array.from(mainGrid.querySelectorAll('.project-card'));
+    if (allCards.length === 0) return;
+
+    // Capture width of original content
+    const originalScrollWidth = mainGrid.scrollWidth;
+
+    allCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add('clone-card');
+        mainGrid.appendChild(clone);
+    });
+
+    // Scroll Handler
+    const scrollHandler = () => {
+        if (mainGrid.scrollLeft >= originalScrollWidth) {
+            mainGrid.scrollLeft -= originalScrollWidth;
+        }
+    };
+
+    if (mainGrid.mobileScrollHandler) {
+        mainGrid.removeEventListener('scroll', mainGrid.mobileScrollHandler);
+    }
+    mainGrid.mobileScrollHandler = scrollHandler;
+    mainGrid.addEventListener('scroll', scrollHandler);
+}
+
+window.addEventListener('load', setupMobileInfiniteScroll);
+window.addEventListener('resize', () => {
+    setTimeout(setupMobileInfiniteScroll, 200);
+});
+setTimeout(setupMobileInfiniteScroll, 100);

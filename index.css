@@ -95,6 +95,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -103,6 +105,7 @@ body {
     color: var(--color-text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
@@ -2089,13 +2092,115 @@ a.tag-link:hover {
         gap: 30px;
     }
 
-    /* 4. Projects - Stack 1 per row for readability (Carousel will handle pagination) */
-    .projects-grid {
-        grid-template-columns: 1fr !important;
+    /* 4. Projects Redesign - Horizontal Snap Scroll (Netflix Style) */
+    .carousel-btn,
+    .carousel-indicators {
+        display: none !important;
     }
 
-    /* Note: "3 par 3" interpreted as standard paging/stacking.
-       If limiting quantity is needed, JS adjustment is better. */
+    .projects-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        transform: none !important;
+        opacity: 1 !important;
+        position: relative !important;
+        width: 100% !important;
+        padding: 10px 20px 30px 20px !important;
+        /* Top, Right, Bottom, Left */
+        gap: 15px;
+        /* Reduced gap since margin is handled here */
+        scrollbar-width: none;
+        /* Hide scrollbar Firefox */
+        -ms-overflow-style: none;
+        /* IE 10+ */
+        justify-content: flex-start;
+    }
+
+    .projects-grid::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .projects-wrapper {
+        overflow: visible !important;
+    }
+
+    .project-card {
+        min-width: 250px !important;
+        width: 250px !important;
+        scroll-snap-align: start;
+        /* Align left makes scanning easier */
+        margin-right: 15px !important;
+        flex-shrink: 0;
+        scroll-margin: 20px;
+        white-space: normal !important;
+        padding: 15px !important;
+    }
+
+    .project-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .project-description {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        /* Limit description length for uniformity */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* --- Fix: RESET ALL MIN-WIDTHS causing overflow --- */
+    .certification-card,
+    .goal-card {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .projects-grid,
+    .goals-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        padding: 0 !important;
+        /* Grid gap handles spacing */
+    }
+
+    /* Fix: Prevent text overflow */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,
+    a {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    /* Fix: Container constraint */
+    .container {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        overflow-x: hidden;
+    }
+
+    /* Fix: Section padding reduction */
+    section {
+        padding: 40px 0 !important;
+        width: 100%;
+        overflow-x: hidden;
+    }
 }
 
 /* ========================================
