@@ -1941,24 +1941,123 @@ a.tag-link:hover {
 
 @media (max-width: 480px) {
     :root {
-        --font-size-6xl: 2rem;
-        --spacing-3xl: 3rem;
+        --font-size-6xl: 2.2rem;
+        --font-size-5xl: 1.8rem;
+        --font-size-4xl: 1.5rem;
+        --font-size-3xl: 1.3rem;
+        --font-size-2xl: 1.2rem;
+        --font-size-xl: 1.1rem;
+        --font-size-lg: 1rem;
+        --spacing-3xl: 2rem;
+        --spacing-2xl: 1.5rem;
+        --spacing-xl: 1rem;
     }
 
     .container {
-        padding: 0 var(--spacing-sm);
+        padding: 0 15px;
     }
 
     section {
-        padding: var(--spacing-2xl) var(--spacing-sm);
+        padding: 50px 0;
     }
 
+    /* --- Typography Fixes --- */
+    h1,
+    .hero-title {
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    p,
+    .hero-subtitle,
+    .timeline-description,
+    .project-description,
+    .contact-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        white-space: normal;
+        /* Force wrap */
+    }
+
+    /* --- Icon Sizing (User Complaint: "taille de l'écran") --- */
+    .skill-icon,
+    .project-icon,
+    .goal-icon,
+    .cert-icon,
+    .contact-icon {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.2rem !important;
+        margin-bottom: 10px;
+        flex-shrink: 0;
+    }
+
+    /* --- Card Spacing & Layout --- */
+    .project-card,
+    .timeline-content,
+    .goal-card,
+    .certification-card,
+    .contact-form {
+        padding: 1.2rem !important;
+    }
+
+    /* Clean up heavy background decorations on mobile */
+    .cert-badge-img,
+    .cert-bg-icon,
+    .project-card::before {
+        display: none !important;
+    }
+
+    /* --- Timeline Adjustments --- */
     .timeline {
-        padding-left: var(--spacing-lg);
+        padding-left: 25px;
+        margin: 0;
     }
 
     .timeline-dot {
-        left: -32px;
+        left: -34px;
+        width: 14px;
+        height: 14px;
+        border-width: 3px;
+        top: 5px;
+    }
+
+    .timeline-date {
+        font-size: 0.8rem;
+        padding: 2px 8px;
+    }
+
+    /* --- Project/Carousel Fixes --- */
+    .projects-carousel {
+        padding: 0;
+        margin: 0;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+        background: rgba(79, 70, 229, 0.8);
+        /* More visible backdrop */
+    }
+
+    /* --- Header/Nav --- */
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .lang-switcher {
+        right: 50px;
+        /* Make room for hamburger */
     }
 }
 
