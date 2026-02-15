@@ -2364,12 +2364,7 @@ section {
    ========================================= */
 .goals {
     padding: 100px 0;
-    position: relative;
-    z-index: 100;
-    background-color: var(--color-bg-secondary);
-    /* Match experience or projects bg */
-    isolation: isolate;
-    /* Create new stacking context to prevent canvas bleed-through */
+    /* Removed position, z-index, background to match .certifications default */
 }
 
 .goals-grid {
