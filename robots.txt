@@ -1,0 +1,6 @@
+# robots.txt for portfolio.raphael-hirsch.fr
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://portfolio.raphael-hirsch.fr/sitemap.xml
