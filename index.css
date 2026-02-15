@@ -2059,6 +2059,43 @@ a.tag-link:hover {
         right: 50px;
         /* Make room for hamburger */
     }
+
+    /* --- Mobile Specific Fixes (User Feedback) --- */
+
+    /* 1. Hide CLI Animation */
+    .hero-image {
+        display: none !important;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    /* 2. Hide Scroll Indicator (prevents overlap) */
+    .scroll-down {
+        display: none !important;
+    }
+
+    /* 3. Goals Section - Force Vertical Stack (Fixes missing 2028) */
+    .goals-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px;
+    }
+
+    /* 4. Projects - Stack 1 per row for readability (Carousel will handle pagination) */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Note: "3 par 3" interpreted as standard paging/stacking.
+       If limiting quantity is needed, JS adjustment is better. */
 }
 
 /* ========================================
