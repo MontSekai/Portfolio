@@ -714,10 +714,7 @@ function applyTranslations(lang) {
         if (interestItemDivs[2]) interestItemDivs[2].setAttribute('data-tooltip', t['about.tooltip.hiking']);
         if (interestItemDivs[3]) interestItemDivs[3].setAttribute('data-tooltip', t['about.tooltip.triathlon']);
 
-        const statLabels = aboutSection.querySelectorAll('.stat-label');
 
-        if (statLabels[0]) statLabels[0].textContent = t['about.stat.degree'];
-        if (statLabels[1]) statLabels[1].textContent = t['about.stat.projects'];
     }
 
     // Skills Section
@@ -1174,3 +1171,26 @@ window.addEventListener('resize', () => {
     setTimeout(setupMobileInfiniteScroll, 200);
 });
 setTimeout(setupMobileInfiniteScroll, 100);
+
+// Legal Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const legalModal = document.getElementById("legalModal");
+    const openLegalBtn = document.getElementById("openLegalBtn");
+    const closeLegalBtn = document.querySelector(".close-modal");
+
+    if (openLegalBtn && legalModal && closeLegalBtn) {
+        openLegalBtn.addEventListener('click', () => {
+            legalModal.style.display = "block";
+        });
+
+        closeLegalBtn.addEventListener('click', () => {
+            legalModal.style.display = "none";
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === legalModal) {
+                legalModal.style.display = "none";
+            }
+        });
+    }
+});
