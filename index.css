@@ -587,6 +587,7 @@ a:hover {
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-glow);
+    color: white;
 }
 
 .btn-secondary {
@@ -597,6 +598,7 @@ a:hover {
 
 .btn-secondary:hover {
     background-color: var(--color-primary);
+    color: white;
     transform: translateY(-3px);
 }
 
@@ -845,7 +847,7 @@ section {
     z-index: 60;
 }
 
-/* .skill-category:hover removed as per user request */
+
 
 /* Skill Categories Colors */
 .cat-os {
@@ -911,7 +913,7 @@ section {
     transition: all var(--transition-base);
 }
 
-/* .skill-item:hover removed */
+
 
 .skill-item:hover .skill-name {
     color: white;
@@ -931,27 +933,7 @@ section {
     transition: color var(--transition-base);
 }
 
-.skill-percent {
-    display: none;
-}
 
-.skill-bar {
-    display: none;
-}
-
-.skill-progress {
-    height: 100%;
-    background: var(--skill-gradient, var(--gradient-accent));
-    border-radius: var(--radius-full);
-    transition: width 1s ease-out;
-    animation: progressLoad 1.5s ease-out;
-}
-
-@keyframes progressLoad {
-    from {
-        width: 0;
-    }
-}
 
 /* ========================================
    Certifications Section
@@ -1015,7 +997,7 @@ section {
     box-shadow: 0 10px 30px rgba(79, 70, 229, 0.2);
 }
 
-/* Base hover removed for non-clickable */
+
 
 .cert-icon {
     width: 60px;
@@ -1232,7 +1214,7 @@ section {
     z-index: 60;
 }
 
-/* .timeline-content:hover removed */
+
 .timeline-content:hover {
     transform: none;
     box-shadow: none;

@@ -11,22 +11,22 @@ const translations = {
 
         // Hero Section
         'hero.greeting': 'Bonjour, je suis',
-        'hero.description': 'Expert en infrastructure IT, virtualisation et sécurité réseau. Je transforme les défis techniques en solutions robustes et évolutives.',
+        'hero.description': 'Administrateur système et réseau axé sur l\'infrastructure IT, la virtualisation et la sécurité réseau. Je transforme les défis techniques en solutions robustes et évolutives.',
         'hero.btn.projects': 'Voir mes projets',
         'hero.btn.contact': 'Me contacter',
 
         // Typing texts
         'typing.0': 'Administrateur Système & Réseau',
-        'typing.1': 'Expert Infrastructure IT',
-        'typing.2': 'Spécialiste Virtualisation',
+        'typing.1': 'Infrastructure IT',
+        'typing.2': 'Virtualisation',
         'typing.3': 'DevOps Engineer',
 
         // About Section
         'about.tag': 'Qui suis-je',
         'about.title': 'À propos de moi',
-        'about.subtitle': 'Passionné par l\'infrastructure IT et la sécurité',
-        'about.desc1': 'Actuellement en Mastère MICSI au CESI de Châteauroux (2025-2027) en alternance au Conseil départemental d\'Eure-et-Loir, après un Bachelor ASR dans la même école. Je me spécialise dans l\'administration système et réseau avec une expertise croissante en infrastructure IT, virtualisation et sécurité réseau.',
-        'about.desc2': 'Titulaire d\'un BTS SIO option SISR, mon parcours m\'a permis de développer des compétences solides en gestion d\'infrastructure, migration de postes, veille technologique et développement d\'outils avec PowerShell. Passionné par les nouvelles technologies, je m\'épanouis dans la résolution de problèmes complexes.',
+        'about.subtitle': 'Profil orienté Infrastructure IT et Sécurité',
+        'about.desc1': 'Actuellement en Mastère MICSI au CESI de Châteauroux (2025-2027) en alternance au Conseil départemental d\'Eure-et-Loir, après un Bachelor ASR dans la même école. Je m\'oriente vers l\'administration système et réseau en développant mes compétences en infrastructure IT, virtualisation et sécurité réseau.',
+        'about.desc2': 'Titulaire d\'un BTS SIO option SISR, mon parcours m\'a permis de développer des compétences solides en gestion d\'infrastructure, migration de postes, veille technologique et développement d\'outils avec PowerShell. Toujours en veille sur les nouvelles technologies, je m\'épanouis dans la résolution de problèmes complexes.',
         'about.interests': 'Centres d\'intérêt',
         'about.interest.radio': 'Radio modélisme',
         'about.interest.roller': 'Roller freestyle',
@@ -40,7 +40,7 @@ const translations = {
         'about.stat.projects': 'Projets réalisés',
 
         // Skills Section
-        'skills.tag': 'Expertise',
+        'skills.tag': 'Savoir-faire',
         'skills.title': 'Compétences Techniques',
         'skills.os': 'Systèmes d\'exploitation',
         'skills.network': 'Réseaux & Sécurité',
@@ -118,18 +118,7 @@ const translations = {
         'project.edr-xdr.title': 'Remplacement EDR par XDR',
         'project.edr-xdr.desc': 'Projet de remplacement de la solution EDR existante par une solution XDR au sein du Conseil départemental. Réalisation de phases de tests et d\'évaluation comparative sur plusieurs solutions leaders du marché.',
         'project.edr-xdr.desc.short': 'Remplacement EDR par XDR : test et validation de solutions leaders.',
-        'project.vmware.title': 'Cluster de Virtualisation',
-        'project.vmware.desc': 'Mise en place d\'un cluster d\'hyperviseurs avec vMotion, DRS et HA pour optimiser l\'utilisation des ressources et la disponibilité.',
-        'project.vmware.desc.short': 'Cluster vMotion, DRS et HA pour haute disponibilité.',
-        'project.powershell.title': 'Automatisation PowerShell',
-        'project.powershell.desc': 'Développement de scripts PowerShell pour automatiser la gestion des utilisateurs AD, le provisioning de VMs et les rapports de conformité.',
-        'project.powershell.desc.short': 'Scripts d\'automatisation (AD, VM, Conformité).',
-        'project.backup.title': 'Système de Sauvegarde Centralisé',
-        'project.backup.desc': 'Implémentation d\'une solution de sauvegarde centralisée pour 200+ serveurs virtuels et physiques.',
-        'project.backup.desc.short': 'Sauvegarde centralisée pour 200+ serveurs.',
-        'project.monitoring.title': 'Monitoring & Supervision',
-        'project.monitoring.desc': 'Déploiement d\'une plateforme de monitoring complète pour surveiller l\'infrastructure réseau, les serveurs et les applications critiques.',
-        'project.monitoring.desc.short': 'Plateforme de supervision réseau et applicative complète.',
+
         'project.rpi-ansible.title': 'Cluster Ansible sur Raspberry Pi 5',
         'project.rpi-ansible.desc': 'Mise en place d\'un environnement Home Lab sur Raspberry Pi 5 avec Raspberry Pi OS Lite. Installation de Docker et Portainer pour la gestion de conteneurs. Déploiement de 3 conteneurs Debian Trixie et configuration d\'Ansible pour l\'orchestration, le test de playbooks et l\'apprentissage des solutions d\'automatisation.',
         'project.rpi-ansible.desc.short': 'Cluster Home Lab RPi : Docker, Portainer et orchestration Ansible.',
@@ -163,7 +152,7 @@ const translations = {
         'contact.tag': 'Restons en contact',
         'contact.title': 'Contactez-moi',
         'contact.subtitle': 'Discutons de votre projet',
-        'contact.text': 'Vous recherchez un profil IT spécialisé dans les domaines de l\'infrastructure, de la sécurité réseau, de l\'administration système et même de la gestion de projet ? N\'hésitez pas à me contacter !',
+        'contact.text': 'Vous recherchez un profil IT compétent dans les domaines de l\'infrastructure, de la sécurité réseau, de l\'administration système et même de la gestion de projet ? N\'hésitez pas à me contacter !',
 
         'contact.location': 'Localisation',
         'contact.form.name': 'Nom complet',
@@ -179,7 +168,7 @@ const translations = {
         'contact.form.sending': 'Envoi en cours...',
 
         // Footer
-        'footer.tagline': 'Expert en infrastructure IT et sécurité réseau',
+        'footer.tagline': 'Administrateur Système & Réseau',
         'footer.nav': 'Navigation',
         'footer.projects': 'Projets',
         'footer.all.projects': 'Tous les projets',
@@ -200,22 +189,22 @@ const translations = {
 
         // Hero Section
         'hero.greeting': 'Hello, I am',
-        'hero.description': 'IT infrastructure, virtualization, and network security expert. I transform technical challenges into robust and scalable solutions.',
+        'hero.description': 'System and Network Administrator focused on IT infrastructure, virtualization, and network security. I transform technical challenges into robust and scalable solutions.',
         'hero.btn.projects': 'View my projects',
         'hero.btn.contact': 'Contact me',
 
         // Typing texts
         'typing.0': 'System & Network Administrator',
-        'typing.1': 'IT Infrastructure Expert',
-        'typing.2': 'Virtualization Specialist',
+        'typing.1': 'IT Infrastructure',
+        'typing.2': 'Virtualization',
         'typing.3': 'DevOps Engineer',
 
         // About Section
         'about.tag': 'Who am I',
         'about.title': 'About me',
-        'about.subtitle': 'Passionate about IT infrastructure and security',
-        'about.desc1': 'Currently pursuing a Master\'s in MICSI at CESI Châteauroux (2025-2027) as a work-study at the Conseil départemental d\'Eure-et-Loir, after a Bachelor\'s in ASR at the same school. I specialize in system and network administration with growing expertise in IT infrastructure, virtualization, and network security.',
-        'about.desc2': 'Holder of a BTS SIO SISR option, my journey has allowed me to develop strong skills in infrastructure management, workstation migration, technology watch, and tool development with PowerShell. Passionate about new technologies, I thrive in solving complex problems.',
+        'about.subtitle': 'IT Infrastructure and Security Oriented Profile',
+        'about.desc1': 'Currently pursuing a Master\'s in MICSI at CESI Châteauroux (2025-2027) as a work-study at the Conseil départemental d\'Eure-et-Loir, after a Bachelor\'s in ASR at the same school. I focus on system and network administration while developing skills in IT infrastructure, virtualization, and network security.',
+        'about.desc2': 'Holder of a BTS SIO SISR option, my journey has allowed me to develop strong skills in infrastructure management, workstation migration, technology watch, and tool development with PowerShell. Always up to date with new technologies, I thrive in solving complex problems.',
         'about.interests': 'Interests',
         'about.interest.radio': 'RC Modeling',
         'about.interest.roller': 'Freestyle Roller',
@@ -306,18 +295,7 @@ const translations = {
         'project.edr-xdr.title': 'EDR to XDR Replacement',
         'project.edr-xdr.desc': 'Project to replace the existing EDR solution with an XDR solution within the Departmental Council. Conducting testing and comparative evaluation phases on several leading market solutions.',
         'project.edr-xdr.desc.short': 'Replacing EDR with XDR: testing and validating leader solutions.',
-        'project.vmware.title': 'Virtualization Cluster',
-        'project.vmware.desc': 'Implementation of a hypervisor cluster with vMotion, DRS and HA to optimize resource utilization and availability.',
-        'project.vmware.desc.short': 'vMotion, DRS, and HA cluster for high availability.',
-        'project.powershell.title': 'PowerShell Automation',
-        'project.powershell.desc': 'Development of PowerShell scripts to automate AD user management, VM provisioning and compliance reports.',
-        'project.powershell.desc.short': 'Automation scripts (AD, VM, Compliance).',
-        'project.backup.title': 'Centralized Backup System',
-        'project.backup.desc': 'Implementation of a centralized backup solution for 200+ virtual and physical servers.',
-        'project.backup.desc.short': 'Centralized backup for 200+ servers.',
-        'project.monitoring.title': 'Monitoring & Supervision',
-        'project.monitoring.desc': 'Deployment of a complete monitoring platform to monitor network infrastructure, servers and critical applications.',
-        'project.monitoring.desc.short': 'Complete network and app monitoring platform.',
+
         'project.rpi-ansible.title': 'Ansible Cluster on Raspberry Pi 5',
         'project.rpi-ansible.desc': 'Setup of a Home Lab environment on Raspberry Pi 5 with Raspberry Pi OS Lite. Installation of Docker and Portainer for container management. Deployment of 3 Debian Trixie containers and Ansible configuration for orchestration, playbook testing, and automation learning.',
         'project.rpi-ansible.desc.short': 'RPi Home Lab Cluster: Docker, Portainer, and Ansible orchestration.',
@@ -351,7 +329,7 @@ const translations = {
         'contact.tag': 'Get in touch',
         'contact.title': 'Contact me',
         'contact.subtitle': 'Let\'s discuss your project',
-        'contact.text': 'Looking for an IT specialist in infrastructure, network security, system administration, and even project management? Feel free to contact me!',
+        'contact.text': 'Looking for an IT professional skilled in infrastructure, network security, system administration, and even project management? Feel free to contact me!',
 
         'contact.location': 'Location',
         'contact.form.name': 'Full name',
@@ -367,7 +345,7 @@ const translations = {
         'contact.form.sending': 'Sending...',
 
         // Footer
-        'footer.tagline': 'IT infrastructure and network security expert',
+        'footer.tagline': 'System & Network Administrator',
         'footer.nav': 'Navigation',
         'footer.projects': 'Projects',
         'footer.all.projects': 'All projects',
