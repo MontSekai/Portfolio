@@ -725,15 +725,16 @@ function applyTranslations(lang) {
 
         const skillsTitle = skillsSection.querySelector('.section-title');
         if (skillsTitle) skillsTitle.textContent = t['skills.title'];
-
-        const skillTitles = skillsSection.querySelectorAll('.skill-title');
-        if (skillTitles[0]) skillTitles[0].textContent = t['skills.os'];
-        if (skillTitles[1]) skillTitles[1].textContent = t['skills.network'];
-        if (skillTitles[2]) skillTitles[2].textContent = t['skills.cloud'];
-        if (skillTitles[3]) skillTitles[3].textContent = t['skills.scripting'];
-        if (skillTitles[4]) skillTitles[4].textContent = t['skills.monitoring'];
-        if (skillTitles[5]) skillTitles[5].textContent = t['skills.database'];
     }
+
+    // Generic translation for all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (t[key]) {
+            // Handle placeholders if needed (simple replacement)
+            element.textContent = t[key];
+        }
+    });
 
     // Certifications
     const certsSection = document.getElementById('certifications');

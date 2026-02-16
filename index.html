@@ -274,20 +274,27 @@
                 <div class="section-line"></div>
             </div>
             <div class="skills-grid">
-                <div class="skill-category cat-os">
+
+
+                <div class="skill-category cat-network">
                     <div class="skill-icon">
-                        <i class="fas fa-server"></i>
+                        <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3 class="skill-title">Systèmes d'exploitation & Virtualisation</h3>
+                    <h3 class="skill-title" data-i18n="skills.network">Réseaux & Sécurité</h3>
                     <div class="skill-items">
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span class="skill-name">Windows Server</span>
+                                <span class="skill-name">TCP/IP, DNS, DHCP</span>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span class="skill-name">Linux (Ubuntu, Debian, kali)</span>
+                                <span class="skill-name">Firewalls, WAF</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">VPN, IPSec, SSL</span>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -298,35 +305,11 @@
                     </div>
                 </div>
 
-                <div class="skill-category cat-network">
-                    <div class="skill-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3 class="skill-title">Réseaux & Sécurité</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">TCP/IP, DNS, DHCP</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Cisco, Firewalls</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">VPN, IPSec, SSL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="skill-category cat-cloud">
                     <div class="skill-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <h3 class="skill-title">Cloud & Virtualisation</h3>
+                    <h3 class="skill-title" data-i18n="skills.cloud">Cloud & Virtualisation</h3>
                     <div class="skill-items">
                         <div class="skill-item">
                             <div class="skill-info">
@@ -340,7 +323,12 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span class="skill-name">AWS, Hyper-V</span>
+                                <span class="skill-name">AWS</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Hyper-V</span>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -360,7 +348,7 @@
                     <div class="skill-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="skill-title">Scripting & Automation</h3>
+                    <h3 class="skill-title" data-i18n="skills.scripting">Scripting & Automation</h3>
                     <div class="skill-items">
                         <div class="skill-item">
                             <div class="skill-info">
@@ -389,11 +377,11 @@
                     <div class="skill-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="skill-title">Monitoring & Sauvegarde</h3>
+                    <h3 class="skill-title" data-i18n="skills.monitoring">Monitoring & Sauvegarde</h3>
                     <div class="skill-items">
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span class="skill-name">Nagios, Zabbix</span>
+                                <span class="skill-name">Zabbix</span>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -406,6 +394,16 @@
                                 <span class="skill-name">ELK Stack</span>
                             </div>
                         </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Rapid7</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Easyvista Coservit</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -413,7 +411,7 @@
                     <div class="skill-icon">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3 class="skill-title">Bases de données</h3>
+                    <h3 class="skill-title" data-i18n="skills.database">Bases de données</h3>
                     <div class="skill-items">
                         <div class="skill-item">
                             <div class="skill-info">
@@ -422,12 +420,62 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span class="skill-name">MySQL, PostgreSQL</span>
+                                <span class="skill-name">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">PostgreSQL</span>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
                                 <span class="skill-name">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option B: Full Width Management Category -->
+                <div class="skill-category cat-management">
+                    <div class="skill-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="skill-title" data-i18n="skills.management">Management & Méthodologie</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">ITIL v4</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Agile (Scrum)</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Gestion de projet (Gantt, PERT)</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">RACI</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SWOT</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Analyse QCD</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Analyse de risques (EBIOS)</span>
                             </div>
                         </div>
                     </div>

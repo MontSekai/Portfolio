@@ -42,12 +42,12 @@ const translations = {
         // Skills Section
         'skills.tag': 'Savoir-faire',
         'skills.title': 'Compétences Techniques',
-        'skills.os': 'Systèmes d\'exploitation',
         'skills.network': 'Réseaux & Sécurité',
         'skills.cloud': 'Cloud & Virtualisation',
         'skills.scripting': 'Scripting & Automation',
         'skills.monitoring': 'Monitoring & Sauvegarde',
         'skills.database': 'Bases de données',
+        'skills.management': 'Management & Méthodologie',
 
         // Certifications
         'certs.tag': 'Reconnaissance',
@@ -220,12 +220,12 @@ const translations = {
         // Skills Section
         'skills.tag': 'Expertise',
         'skills.title': 'Technical Skills',
-        'skills.os': 'Operating Systems',
         'skills.network': 'Networks & Security',
         'skills.cloud': 'Cloud & Virtualization',
         'skills.scripting': 'Scripting & Automation',
         'skills.monitoring': 'Monitoring & Backup',
         'skills.database': 'Databases',
+        'skills.management': 'Management & Methodology',
 
         // Certifications
         'certs.tag': 'Recognition',

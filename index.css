@@ -849,11 +849,7 @@ section {
 
 
 
-/* Skill Categories Colors */
-.cat-os {
-    --skill-accent: #06b6d4;
-    --skill-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-}
+
 
 .cat-network {
     --skill-accent: #10b981;
@@ -878,6 +874,11 @@ section {
 .cat-db {
     --skill-accent: #eab308;
     --skill-gradient: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+}
+
+.cat-management {
+    --skill-accent: #6366f1;
+    --skill-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 }
 
 .skill-icon {
