@@ -11,7 +11,7 @@ const translations = {
 
         // Hero Section
         'hero.greeting': 'Bonjour, je suis',
-        'hero.description': 'Spécialisé dans la conception et la sécurisation d\'infrastructures IT. De l\'automatisation de serveurs à la gestion de projets techniques en collectivité territoriale, je transforme les défis informatiques en solutions robustes, sécurisées et évolutives. Ma démarche : allier une forte expertise technique (virtualisation, conteneurisation) à une véritable vision managériale.',
+        'hero.description': 'Spécialisé dans l\'architecture et la sécurisation des infrastructures IT. J\'allie une solide expertise technique (virtualisation, cybersécurité) au pilotage stratégique de projets. Mon objectif : concevoir, déployer et manager des systèmes d\'information résilients, performants et adaptés aux nouveaux enjeux de sécurité.',
         'hero.btn.projects': 'Voir mes projets',
         'hero.btn.contact': 'Me contacter',
 
@@ -193,7 +193,7 @@ const translations = {
 
         // Hero Section
         'hero.greeting': 'Hello, I am',
-        'hero.description': 'Specialized in designing and securing IT infrastructures. From server automation to managing technical projects in a local government, I transform IT challenges into robust, secure, and scalable solutions. My approach: combining strong technical expertise (virtualization, containerization) with a true managerial vision.',
+        'hero.description': 'Specialized in the architecture and security of IT infrastructures. I combine strong technical expertise (virtualization, cybersecurity) with strategic project management. My goal: to design, deploy, and manage resilient, high-performance information systems adapted to new security challenges.',
         'hero.btn.projects': 'View my projects',
         'hero.btn.contact': 'Contact me',
 
