@@ -90,6 +90,8 @@ let isDeleting = false;
 let typingSpeed = 100;
 
 function typeText() {
+    if (!typingText) return;
+
     const currentText = texts[textIndex];
 
     if (isDeleting) {
@@ -115,7 +117,9 @@ function typeText() {
 }
 
 // Start typing animation
-setTimeout(typeText, 1000);
+if (typingText) {
+    setTimeout(typeText, 1000);
+}
 
 // ========================================
 // Dynamic Glowing Topographic Background (Canvas)
@@ -698,6 +702,7 @@ function applyTranslations(lang) {
         const aboutDescs = aboutSection.querySelectorAll('.about-description');
         if (aboutDescs[0]) aboutDescs[0].textContent = t['about.desc1'];
         if (aboutDescs[1]) aboutDescs[1].textContent = t['about.desc2'];
+        if (aboutDescs[2]) aboutDescs[2].textContent = t['about.desc3'];
 
         const interestsTitle = aboutSection.querySelector('.interests-title');
         if (interestsTitle) interestsTitle.textContent = t['about.interests'];
@@ -1056,10 +1061,12 @@ function applyTranslations(lang) {
 
 function updateTypingTexts(lang) {
     const t = translations[lang];
-    texts[0] = t['typing.0'];
-    texts[1] = t['typing.1'];
-    texts[2] = t['typing.2'];
-    texts[3] = t['typing.3'];
+    if (typingText) {
+        texts[0] = t['typing.0'];
+        texts[1] = t['typing.1'];
+        texts[2] = t['typing.2'];
+        texts[3] = t['typing.3'];
+    }
 }
 
 

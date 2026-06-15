@@ -11,7 +11,7 @@ const translations = {
 
         // Hero Section
         'hero.greeting': 'Bonjour, je suis',
-        'hero.description': 'Administrateur système et réseau axé sur l\'infrastructure IT, la virtualisation et la sécurité réseau. Je transforme les défis techniques en solutions robustes et évolutives.',
+        'hero.description': 'Spécialisé dans la conception et la sécurisation d\'infrastructures IT. De l\'automatisation de serveurs à la gestion de projets techniques en collectivité territoriale, je transforme les défis informatiques en solutions robustes, sécurisées et évolutives. Ma démarche : allier une forte expertise technique (virtualisation, conteneurisation) à une véritable vision managériale.',
         'hero.btn.projects': 'Voir mes projets',
         'hero.btn.contact': 'Me contacter',
 
@@ -24,9 +24,10 @@ const translations = {
         // About Section
         'about.tag': 'Qui suis-je',
         'about.title': 'À propos de moi',
-        'about.subtitle': 'Profil orienté Infrastructure IT et Sécurité',
-        'about.desc1': 'Actuellement en Mastère MICSI au CESI de Châteauroux (2025-2027) en alternance au Conseil départemental d\'Eure-et-Loir, après un Bachelor ASR dans la même école. Je m\'oriente vers l\'administration système et réseau en développant mes compétences en infrastructure IT, virtualisation et sécurité réseau.',
-        'about.desc2': 'Titulaire d\'un BTS SIO option SISR, mon parcours m\'a permis de développer des compétences solides en gestion d\'infrastructure, migration de postes, veille technologique et développement d\'outils avec PowerShell. Toujours en veille sur les nouvelles technologies, je m\'épanouis dans la résolution de problèmes complexes.',
+        'about.subtitle': 'Profil orienté Infrastructure IT, Cybersécurité et Pilotage de projets',
+        'about.desc1': 'Actuellement en Mastère spécialisé en infrastructure et cybersécurité en alternance au sein du secteur public, mon évolution m\'amène aujourd\'hui à conjuguer expertise système et responsabilités managériales. J\'accompagne la transformation de l\'infrastructure de mon organisation tout en pilotant la planification et la communication de projets IT complexes.',
+        'about.desc2': 'Techniquement, je cultive une approche très « hands-on ». Qu\'il s\'agisse d\'automatiser des déploiements avec Ansible, de gérer des architectures conteneurisées sous Docker, ou de concevoir des environnements virtualisés sous Proxmox, j\'aime comprendre les technologies en profondeur. Cette passion s\'illustre au quotidien par la maintenance de mon propre laboratoire (Homelab) pour tester et éprouver de nouvelles solutions de manière autonome.',
+        'about.desc3': 'Au-delà de l\'infrastructure pure, je suis animé par la création de bout en bout et le travail en équipe. De la conception d\'applications web collaboratives à des projets plus créatifs en développement ou en électronique, j\'aime décloisonner les compétences. Ouvert sur l\'international et en apprentissage actif de nouvelles langues, j\'ai à cœur de m\'inscrire dans des environnements techniques exigeants et multiculturels.',
         'about.interests': 'Centres d\'intérêt',
         'about.interest.radio': 'Radio modélisme',
         'about.interest.roller': 'Roller freestyle',
@@ -119,15 +120,18 @@ const translations = {
         'project.edr-xdr.desc': 'Projet de remplacement de la solution EDR existante par une solution XDR au sein du Conseil départemental. Réalisation de phases de tests et d\'évaluation comparative sur plusieurs solutions leaders du marché.',
         'project.edr-xdr.desc.short': 'Remplacement EDR par XDR : test et validation de solutions leaders.',
 
-        'project.rpi-ansible.title': 'Cluster Ansible sur Raspberry Pi 5',
-        'project.rpi-ansible.desc': 'Mise en place d\'un environnement Home Lab sur Raspberry Pi 5 avec Raspberry Pi OS Lite. Installation de Docker et Portainer pour la gestion de conteneurs. Déploiement de 3 conteneurs Debian Trixie et configuration d\'Ansible pour l\'orchestration, le test de playbooks et l\'apprentissage des solutions d\'automatisation.',
-        'project.rpi-ansible.desc.short': 'Cluster Home Lab RPi : Docker, Portainer et orchestration Ansible.',
+        'project.rpi-ansible.title': 'Homelab : Proxmox & Raspberry Pi',
+        'project.rpi-ansible.desc': 'Architecture personnelle avec un Cluster Proxmox et Raspberry Pi 5. Déploiements sous Docker, configurations de passerelles comme Guacamole 1.5.5 et automatisation avec des playbooks Ansible.',
+        'project.rpi-ansible.desc.short': 'Homelab Proxmox/RPi5 : Docker, Guacamole et Ansible.',
         'project.portfolio.title': 'Portfolio Personnel',
         'project.portfolio.desc': 'Conception et développement de ce portfolio interactif pour présenter mes compétences et projets. Utilisation de HTML5, CSS3, JavaScript (ES6+), et intégration de Canvas pour l\'animation d\'arrière-plan. Hébergé sur GitHub Pages.',
         'project.portfolio.desc.short': 'Portfolio interactif : HTML5, CSS3, JS et animation Canvas.',
-        'project.unity-game.title': 'Jeu Vidéo RPG - Unity & AI',
-        'project.unity-game.desc': 'Développement d\'un RPG sur Unity assisté par l\'IA Google Antigravity. Gestion complète backend : base de données SQL, authentification sécurisée et hébergement pour accès multijoueur. Collaboration avec un graphiste professionnel pour la direction artistique.',
-        'project.unity-game.desc.short': 'RPG Multiplayer Unity/C# avec backend SQL et IA Antigravity.',
+        'project.undercover.title': 'Application Web Multijoueur',
+        'project.undercover.desc': 'Lancement récent de l\'application web multijoueur "Best Undercover" en équipe de 3. Gestion d\'une communauté Discord et intégration des retours utilisateurs.',
+        'project.undercover.desc.short': 'Web app multijoueur : Undercover, Discord & retours users.',
+        'project.unity-game.title': 'Jeu Action-RPG 2D & Hardware',
+        'project.unity-game.desc': 'Développement d\'un jeu Action-RPG 2D sur Unity assisté par l\'IA et conceptions hardware sur base d\'ESP32. Une logique algorithmique et curiosité technique au-delà de l\'administration réseau classique.',
+        'project.unity-game.desc.short': 'Jeu Unity 2D & conceptions hardware ESP32.',
 
         // Goals Section
         'goals.tag': 'Perspectives',
@@ -189,7 +193,7 @@ const translations = {
 
         // Hero Section
         'hero.greeting': 'Hello, I am',
-        'hero.description': 'System and Network Administrator focused on IT infrastructure, virtualization, and network security. I transform technical challenges into robust and scalable solutions.',
+        'hero.description': 'Specialized in designing and securing IT infrastructures. From server automation to managing technical projects in a local government, I transform IT challenges into robust, secure, and scalable solutions. My approach: combining strong technical expertise (virtualization, containerization) with a true managerial vision.',
         'hero.btn.projects': 'View my projects',
         'hero.btn.contact': 'Contact me',
 
@@ -202,9 +206,10 @@ const translations = {
         // About Section
         'about.tag': 'Who am I',
         'about.title': 'About me',
-        'about.subtitle': 'IT Infrastructure and Security Oriented Profile',
-        'about.desc1': 'Currently pursuing a Master\'s in MICSI at CESI Châteauroux (2025-2027) as a work-study at the Conseil départemental d\'Eure-et-Loir, after a Bachelor\'s in ASR at the same school. I focus on system and network administration while developing skills in IT infrastructure, virtualization, and network security.',
-        'about.desc2': 'Holder of a BTS SIO SISR option, my journey has allowed me to develop strong skills in infrastructure management, workstation migration, technology watch, and tool development with PowerShell. Always up to date with new technologies, I thrive in solving complex problems.',
+        'about.subtitle': 'IT Infrastructure, Cybersecurity and Project Management Oriented Profile',
+        'about.desc1': 'Currently pursuing a Master\'s degree specializing in infrastructure and cybersecurity on a work-study basis in the public sector, my evolution leads me today to combine system expertise and managerial responsibilities. I support the transformation of my organization\'s infrastructure while steering the planning and communication of complex IT projects.',
+        'about.desc2': 'Technically, I cultivate a very \'hands-on\' approach. Whether it\'s automating deployments with Ansible, managing containerized architectures with Docker, or designing virtualized environments with Proxmox, I like to understand technologies in depth. This passion is illustrated daily by maintaining my own laboratory (Homelab) to independently test and validate new solutions.',
+        'about.desc3': 'Beyond pure infrastructure, I am driven by end-to-end creation and teamwork. From designing collaborative web applications to more creative development or electronics projects, I like to break down the silos between skills. Open to the international scene and actively learning new languages, I am eager to integrate into demanding and multicultural technical environments.',
         'about.interests': 'Interests',
         'about.interest.radio': 'RC Modeling',
         'about.interest.roller': 'Freestyle Roller',
@@ -296,15 +301,18 @@ const translations = {
         'project.edr-xdr.desc': 'Project to replace the existing EDR solution with an XDR solution within the Departmental Council. Conducting testing and comparative evaluation phases on several leading market solutions.',
         'project.edr-xdr.desc.short': 'Replacing EDR with XDR: testing and validating leader solutions.',
 
-        'project.rpi-ansible.title': 'Ansible Cluster on Raspberry Pi 5',
-        'project.rpi-ansible.desc': 'Setup of a Home Lab environment on Raspberry Pi 5 with Raspberry Pi OS Lite. Installation of Docker and Portainer for container management. Deployment of 3 Debian Trixie containers and Ansible configuration for orchestration, playbook testing, and automation learning.',
-        'project.rpi-ansible.desc.short': 'RPi Home Lab Cluster: Docker, Portainer, and Ansible orchestration.',
+        'project.rpi-ansible.title': 'Homelab: Proxmox & Raspberry Pi',
+        'project.rpi-ansible.desc': 'Personal architecture with a Proxmox Cluster and Raspberry Pi 5. Docker deployments, gateway configurations like Guacamole 1.5.5, and automation with Ansible playbooks.',
+        'project.rpi-ansible.desc.short': 'Homelab Proxmox/RPi5: Docker, Guacamole, and Ansible.',
         'project.portfolio.title': 'Personal Portfolio',
         'project.portfolio.desc': 'Design and development of this interactive portfolio to showcase my skills and projects. Using HTML5, CSS3, JavaScript (ES6+), and Canvas integration for background animation. Hosted on GitHub Pages.',
         'project.portfolio.desc.short': 'Interactive portfolio: HTML5, CSS3, JS, and Canvas animation.',
-        'project.unity-game.title': 'RPG Video Game - Unity & AI',
-        'project.unity-game.desc': 'Development of an RPG on Unity assisted by Google Antigravity AI. Full backend management: SQL database, secure authentication, and hosting for multiplayer access. Collaboration with a professional graphic designer for art direction.',
-        'project.unity-game.desc.short': 'Multiplayer RPG Unity/C# with SQL backend and Antigravity AI.',
+        'project.undercover.title': 'Multiplayer Web Application',
+        'project.undercover.desc': 'Recent launch of the multiplayer web application "Best Undercover" in a team of 3. Management of a Discord community and integration of user feedback.',
+        'project.undercover.desc.short': 'Multiplayer web app: Undercover, Discord & user feedback.',
+        'project.unity-game.title': '2D Action-RPG Game & Hardware',
+        'project.unity-game.desc': 'Development of a 2D Action-RPG game on Unity assisted by AI and hardware designs based on ESP32. An algorithmic logic and technical curiosity beyond classic network administration.',
+        'project.unity-game.desc.short': 'Unity 2D Game & ESP32 hardware designs.',
 
         // Goals Section
         'goals.tag': 'Perspectives',
